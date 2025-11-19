@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import adminImage from "../assets/Frame 45 (1).png"
 import {
   LayoutDashboard,
   Image,
@@ -29,21 +30,16 @@ const SideNavbar = () => {
   // State to manage the collapse/expand state of the sidebar
   const [isOpen, setIsOpen] = useState(true);
 
-  // You would replace this with your actual logo component or image
   const Logo = () => (
     <div className="flex items-center p-4">
-      {/* Assuming a basic text logo for simplicity */}
-      {/* Replace 'UNITech' with your image or SVG if needed */}
-      <span className={`text-2xl font-bold transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
-        UNITech
-      </span>
+      <img src={adminImage} alt="" />
     </div>
   );
 
   return (
     <div
       className={`
-        flex flex-col h-screen bg-white shadow-xl
+        flex flex-col h-screen bg-white
         transition-all duration-300 ease-in-out
         ${isOpen ? 'w-64' : 'w-20'}
       `}

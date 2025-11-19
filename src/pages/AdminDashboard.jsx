@@ -4,7 +4,7 @@ export default function AdminDashboard() {
   return (
     <div>
       <div>
-        <section>
+        <section className="sticky top-0 h-fit">
           <SideNavbar></SideNavbar>
         </section>
         <section></section>
