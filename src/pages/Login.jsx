@@ -30,13 +30,13 @@ export default function Login() {
         <div className="w-full h-screen flex justify-center items-center bg-gray-50">
             <div>
                 <div>
-                    <img src={logoImage} alt="" className="block mx-auto" />
+                    <img src={logoImage} alt="" className="block mx-auto mb-3" />
                 </div>
                 <form
                     onSubmit={handleLogin}
                     className="w-[400px] p-8 rounded-xl"
                 >
-                    <h2 className="text-3xl font-bold mb-8">Welcome Back 👋</h2>
+                    <h2 className="text-3xl font-bold mb-6">Welcome Back 👋</h2>
 
                     <label className="text-md text-gray-400">Username or Phone</label>
                     <input
@@ -67,6 +67,7 @@ export default function Login() {
                     <button className="w-full bg-orange-400 text-white p-2 rounded">
                         Login
                     </button>
+                    <p className="underline decoration-orange-400 text-orange-400 text-end">Forgot password?</p>
                 </form>
             </div>
 
