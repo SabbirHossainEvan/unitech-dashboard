@@ -145,7 +145,7 @@ const DashboardOverview = () => {
   const gridClasses = 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6';
 
   return (
-    <div className=" p-4 md:p-8 font-sans">
+    <div className=" p-4 md:p-2 font-sans">
       <section className="p-4 sm:p-6 bg-gray-100 rounded-xl mx-auto max-w-7xl">
         
         {/* Header and Dropdown */}
