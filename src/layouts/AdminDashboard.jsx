@@ -11,7 +11,7 @@ export default function AdminDashboard() {
         </section>
         <section className="col-span-10">
           {/* top navbar */}
-          <section className="">
+          <section className="sticky top-0 h-fit">
             <TopNavbar></TopNavbar>
           </section>
           <section>
