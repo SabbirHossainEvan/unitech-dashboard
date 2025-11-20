@@ -131,7 +131,6 @@ import {
   LogOut,
   ChevronLeft,
 } from 'lucide-react';
-// ✅ ইম্পোর্ট পাথ ঠিক করা হয়েছে
 import { NavLink } from 'react-router-dom'; 
 
 // Define the menu items
@@ -146,9 +145,7 @@ const menuItems = [
   { name: 'Exit', icon: LogOut, link: '/exit' },
 ];
 
-const SideNavbar = () => {
-  // 🗑️ অপ্রয়োজনীয় state মুছে ফেলা হয়েছে
-  // const [activeLink, setActiveLink] = useState('/admin'); 
+const SideNavbar = () => { 
   const [isOpen, setIsOpen] = useState(true);
 
   const Logo = () => (
@@ -193,7 +190,6 @@ const SideNavbar = () => {
                   to={item.link}
                   {...(isDashboard ? { end: true } : {})}
                   
-                  // NavLink এর isActive ক্লাসের জন্য:
                   className={({ isActive }) => `
                     relative flex items-center py-3 px-4 mx-3 my-1
                     rounded-lg text-lg font-medium cursor-pointer
@@ -204,8 +200,7 @@ const SideNavbar = () => {
                     }
                   `}
                 >
-                  {/* 🛑 সমাধান: NavLink এর children প্রপকে ফাংশন হিসেবে ব্যবহার করা হয়েছে 
-                     যাতে আমরা ভেতরের উপাদানে isActive ভ্যালুটি ব্যবহার করতে পারি */}
+
                   {({ isActive }) => (
                     <>
                       <Icon className="w-6 h-6 mr-3 min-w-[1.5rem]" />
@@ -218,7 +213,6 @@ const SideNavbar = () => {
                         {item.name}
                       </span>
                       
-                      {/* ✅ Active Link Highlight: এখন isActive এখানে সংজ্ঞায়িত */}
                       <div
                         className={`
                           absolute left-0 w-1 h-full bg-orange-500 rounded-r-md
