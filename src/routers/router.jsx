@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router";
-import Login from "../pages/Login";
-import AdminDashboard from "../pages/AdminDashboard";
-import InstructorDashboard from "../pages/InstructorDashboard";
-import StudentDashboard from "../pages/StudentDashboard";
+import Login from "../layouts/Login";
+import AdminDashboard from "../layouts/AdminDashboard";
+import InstructorDashboard from "../layouts/InstructorDashboard";
+import StudentDashboard from "../layouts/StudentDashboard";
+import Dashboard from "../adminPages/Dashboard";
+import Banners from "../adminPages/Banners";
 
 const router = createBrowserRouter([
     {
@@ -11,7 +13,17 @@ const router = createBrowserRouter([
     },
     {
         path: "/admin",
-        element: <AdminDashboard></AdminDashboard>
+        element: <AdminDashboard></AdminDashboard>,
+        children: [
+            {
+                index: true,
+                element: <Dashboard></Dashboard>
+            },
+            {
+                path: "/admin/banners",
+                element: <Banners></Banners>
+            }
+        ]
     },
     {
         path: "/instructor",
