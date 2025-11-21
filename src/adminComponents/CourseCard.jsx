@@ -1,9 +1,6 @@
 // CourseCard.jsx
 import React from 'react';
-// আপনি যদি React Icons ব্যবহার করেন, তাহলে এখানে import করতে পারেন। 
-// যেমন: import { FaBook, FaClock, FaCalendarAlt, FaStar, FaPencilAlt, FaUsers, FaSketch, FaFolderOpen, FaLaptopCode } from 'react-icons/fa';
 
-// --- আইকন রেন্ডারিং লজিক (Placeholder Emojis ব্যবহার করা হয়েছে) ---
 const getIcon = (iconType) => {
   switch (iconType) {
     case 'book': return <span className="mr-1 text-sm text-yellow-600">📚</span>; // Courses
@@ -25,11 +22,10 @@ const CourseCard = ({ course }) => {
   
   const { title, imageUrl, price, details, reviews } = course;
   
-  // reviews স্ট্রিংটিকে দুটি ভাগে ভাগ করা: "4.7 (637 Reviews)" -> [4.7, (637 Reviews)]
   const [rating, reviewCount] = reviews.split(' ');
 
   return (
-    // Card Container: rounded-lg, subtle shadow, এবং hover-এর জন্য অ্যানিমেশন
+
     <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 
                     transform transition-all duration-300 hover:shadow-xl hover:scale-[1.01]">
       
@@ -40,7 +36,6 @@ const CourseCard = ({ course }) => {
           alt={title} 
           className="w-full h-full object-cover" 
         />
-        {/* Edit Button - বৃত্তাকার, সাদা ব্যাকগ্রাউন্ডে */}
         <button 
           className="absolute top-3 right-3 bg-white/90 p-1.5 rounded-full shadow-lg text-gray-700 hover:bg-white transition-colors"
           aria-label={`Edit ${title} course`}
