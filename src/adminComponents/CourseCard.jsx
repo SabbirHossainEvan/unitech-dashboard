@@ -60,8 +60,7 @@ const CourseCard = ({ course }) => {
           ))}
         </div>
         
-        {/* Price & Reviews Section */}
-        {/* প্রাইস এবং রিভিউ লাইন একটি বর্ডার দ্বারা বিভক্ত */}
+
         <div className="border-t border-gray-100 pt-3 flex justify-between items-center mb-4">
           <div className="flex items-baseline space-x-1">
             <span className="text-xl font-extrabold text-black">Tk.</span>

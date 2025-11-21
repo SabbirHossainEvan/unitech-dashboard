@@ -60,15 +60,14 @@ const CourseSection = () => {
 
             {/* --- Header/Create New Course --- */}
             <div className="flex justify-end mb-6">
+                <h2 className="text-2xl font-extrabold text-gray-800 mb-4">Academic Courses</h2>
                 <button className="flex items-center text-sm text-white bg-blue-600 py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
                     <span className="mr-1 text-lg font-bold">+</span>
                     Create New Course
                 </button>
             </div>
 
-            {/* --------------------------- */}
-            {/* --- Academic Courses Section --- */}
-            <h2 className="text-2xl font-extrabold text-gray-800 mb-4">Academic Courses</h2>
+
             <hr className="mb-6 border-gray-300" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
