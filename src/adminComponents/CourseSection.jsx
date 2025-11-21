@@ -11,14 +11,12 @@ const CourseSection = () => {
     useEffect(() => {
         const fetchCourses = async () => {
             try {
-                // ⭐ ডিবাগিং লগ: নিশ্চিত করুন যে ফাইলটি কল হচ্ছে ⭐
                 console.log("Attempting to fetch data from: /coursesData.json");
 
                 // Fetching data from the public folder's root
                 const response = await fetch('/coursesData.json');
 
                 if (!response.ok) {
-                    // যদি 404 (Not Found) বা অন্য HTTP ত্রুটি হয়
                     console.error(`Fetch failed with HTTP status: ${response.status}`);
                     throw new Error(`HTTP error! status: ${response.status}. Please check file path.`);
                 }
@@ -56,19 +54,17 @@ const CourseSection = () => {
     const { academic, lifeSkill } = coursesData;
 
     return (
-        <div className="p-6 bg-gray-50 min-h-screen">
+        <div className="p-6  min-h-screen">
 
-            {/* --- Header/Create New Course --- */}
-            <div className="flex justify-end mb-6">
-                <h2 className="text-2xl font-extrabold text-gray-800 mb-4">Academic Courses</h2>
-                <button className="flex items-center text-sm text-white bg-blue-600 py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+            <div className="flex  mb-6 justify-between">
+                <h2 className="text-2xl font-bold text-gray-700 mb-4">Academic Courses</h2>
+                <button className="flex items-center font-bold border text-lg text-gray-600 py-2 px-4 rounded-lg ">
                     <span className="mr-1 text-lg font-bold">+</span>
                     Create New Course
                 </button>
             </div>
 
 
-            <hr className="mb-6 border-gray-300" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
                 {academic && academic.length > 0 ? (
@@ -80,10 +76,8 @@ const CourseSection = () => {
                 )}
             </div>
 
-            {/* ------------------------------------- */}
-            {/* --- Life Skill Development Courses Section --- */}
-            <h2 className="text-2xl font-extrabold text-gray-800 mb-4">Life Skill Development Courses</h2>
-            <hr className="mb-6 border-gray-300" />
+
+            <h2 className="text-2xl font-bold text-gray-700 mb-4">Life Skill Development Courses</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {lifeSkill && lifeSkill.length > 0 ? (
