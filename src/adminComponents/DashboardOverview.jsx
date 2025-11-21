@@ -43,10 +43,6 @@ const CountUp = ({ end, duration = 2.75, formattingFn, label }) => {
     return <span className="block">{displayValue}</span>;
 };
 
-// --- END CountUp Component ---
-
-
-// --- START MetricCard Component Definition ---
 
 const MetricCard = ({ label, rawValue, change, isPositive, bgColor }) => {
   // Determine text color and icon based on the change
@@ -98,7 +94,7 @@ const metricsData = [
     rawValue: 7900, // Target for CountUp
     change: '+11.02%', 
     isPositive: true, 
-    bgColor: 'bg-green-100/70' 
+    bgColor: 'bg-[#35BD9526]' 
   },
   { 
     id: 2, 
@@ -107,7 +103,7 @@ const metricsData = [
     rawValue: 2300, 
     change: '-0.03%', 
     isPositive: false, 
-    bgColor: 'bg-gray-100/70' 
+    bgColor: 'bg-[#CFD0D0CC]' 
   },
   { 
     id: 3, 
@@ -116,7 +112,7 @@ const metricsData = [
     rawValue: 1500, 
     change: '+15.03%', 
     isPositive: true, 
-    bgColor: 'bg-orange-100/70' 
+    bgColor: 'bg-[#FEF4E9]' 
   },
   { 
     id: 4, 
@@ -125,7 +121,7 @@ const metricsData = [
     rawValue: 375, 
     change: '+6.08%', 
     isPositive: true, 
-    bgColor: 'bg-blue-100/70' 
+    bgColor: 'bg-[#D7F2EA]' 
   },
   { 
     id: 5, 
@@ -134,7 +130,7 @@ const metricsData = [
     rawValue: 17000, 
     change: '+6.08%', 
     isPositive: true, 
-    bgColor: 'bg-purple-100/70' 
+    bgColor: 'bg-[#CFD0D0]' 
   },
 ];
 
@@ -149,7 +145,7 @@ const DashboardOverview = () => {
       <section className="p-4 sm:p-6 bg-gray-100 rounded-xl mx-auto w-full">
         
         {/* Header and Dropdown */}
-        <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 border-b pb-4">
+        <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6  pb-4">
           <h2 className="text-3xl font-bold text-gray-900 mb-3 sm:mb-0">Analytics Overview</h2>
           
           {/* Simple Tailwind/React Dropdown Mockup */}
@@ -157,7 +153,7 @@ const DashboardOverview = () => {
             <select
               value={selectedPeriod}
               onChange={(e) => setSelectedPeriod(e.target.value)}
-              className="py-2 pl-4 pr-10 border border-gray-300 rounded-lg text-sm font-medium appearance-none bg-white shadow-sm hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full"
+              className="py-2 pl-4 pr-10 border border-gray-300 rounded-lg text-sm font-medium appearance-none bg-white focus:outline-none focus:ring-orange-300 w-full"
             >
               <option value="monthly">Monthly statistics</option>
               <option value="weekly">Weekly statistics</option>
