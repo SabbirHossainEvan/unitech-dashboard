@@ -10,14 +10,14 @@ const TopNavbar = () => {
   const [hasNewNotifications, setHasNewNotifications] = useState(true);
 
   // Replace this with the actual path to your user's profile image
-  const userProfileImage = 'https://via.placeholder.com/150/f00000/ffffff?text=RM'; // Example image
+  const userProfileImage = 'https://via.placeholder.com/150/f00000/ffffff?text=RM';
   const userName = 'Richardo Mathew';
 
   return (
-    <header className="flex items-center justify-between p-4 bg-white w-full h-16">
+    <header className="flex items-center justify-between p-4 bg-white w-full mx-auto h-16 border-b-2 border-gray-100">
       
       {/* --- Search Bar --- */}
-      <div className="flex-1 max-w-6xl mr-6">
+      <div className="w-full mx-auto mr-6">
         <div 
           className={`
             relative flex items-center bg-gray-100 rounded-lg h-10

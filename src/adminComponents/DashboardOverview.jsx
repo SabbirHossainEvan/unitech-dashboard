@@ -146,7 +146,7 @@ const DashboardOverview = () => {
 
   return (
     <div className=" p-4 md:p-2 font-sans">
-      <section className="p-4 sm:p-6 bg-gray-100 rounded-xl mx-auto max-w-7xl">
+      <section className="p-4 sm:p-6 bg-gray-100 rounded-xl mx-auto w-full">
         
         {/* Header and Dropdown */}
         <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 border-b pb-4">

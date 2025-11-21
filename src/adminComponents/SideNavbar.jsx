@@ -157,7 +157,7 @@ const SideNavbar = () => {
   return (
     <div
       className={`
-        flex flex-col h-screen bg-white shadow-lg
+        flex flex-col h-screen bg-white  border-r-2 border-gray-100
         transition-all duration-300 ease-in-out
         ${isOpen ? 'w-64' : 'w-20'}
       `}
@@ -228,6 +228,7 @@ const SideNavbar = () => {
           })}
         </ul>
       </nav>
+      
     </div>
   );
 };
