@@ -173,7 +173,7 @@ const SideNavbar = () => {
             ${!isOpen && 'rotate-180'}
           `}
         >
-          <ChevronLeft className="w-5 h-5" />
+          <ChevronLeft className="w-5 h-4" />
         </button>
       </div>
 
