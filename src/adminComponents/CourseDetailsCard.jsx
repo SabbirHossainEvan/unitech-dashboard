@@ -31,9 +31,6 @@ const courseData = {
   reviews: 637,
 };
 
-// =======================================================
-// 2. REUSABLE SUB-COMPONENTS
-// =======================================================
 
 // Component for the small stat boxes (4 Courses, 48 Classes, etc.)
 const StatBadge = ({ label, value }) => (
@@ -57,9 +54,6 @@ const CurriculumItem = ({ item }) => (
   </div>
 );
 
-// =======================================================
-// 3. MAIN REACT COMPONENT
-// =======================================================
 
 const CourseDetailsCard = ({ course = courseData }) => {
   // State to control the curriculum dropdown (dynamic feature)
@@ -71,7 +65,7 @@ const CourseDetailsCard = ({ course = courseData }) => {
 
   return (
     // Max width to contain the card on the dashboard
-    <div className="max-w-5xl mx-auto bg-white p-6 shadow-2xl rounded-xl border border-gray-100">
+    <div className=" mx-auto bg-white p-6 shadow-2xl rounded-xl border border-gray-100">
       <div className="grid md:grid-cols-2 gap-8">
         
         {/* --- Left Column (Content) --- */}
