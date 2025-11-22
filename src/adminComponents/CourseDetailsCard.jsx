@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 const courseData = {
   title: "Academic Course: First Semester",
   price: "Tk. 6,000",
-  // Placeholder image path - Replace this with your actual image URL or local path
-  image: "https://images.unsplash.com/photo-1542838132-92c286e00d83?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+
+  image: "/dashboardImage/Rectangle 64.png", 
   stats: [
     { label: "Courses", value: 4 },
     { label: "Classes", value: 48 },
