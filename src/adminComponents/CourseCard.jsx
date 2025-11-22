@@ -99,7 +99,7 @@ const CourseCard = ({ course }) => {
                 </div>
 
                 {/* Enroll Button */}
-                <Link to={"/admmin/course"}>
+                <Link to={"/admin/course"}>
                     <button className="w-full bg-[#F89521] text-white font-bold py-2 rounded-md 
                            hover:border hover:border-[#955914] hover:text-gray-600 hover:bg-gray-50 transition-colors duration-200 shadow-lg 
                            text-sm uppercase tracking-wider">

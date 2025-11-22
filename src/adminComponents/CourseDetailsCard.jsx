@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 
-// =======================================================
-// 1. DYNAMIC DATA STRUCTURE (Included in this file)
-// =======================================================
 
 const courseData = {
   title: "Academic Course: First Semester",
