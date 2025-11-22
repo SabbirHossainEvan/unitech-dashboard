@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "1st Semester",
-      "imageUrl": "/images/1st_semester.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63.png",
       "price": "6,000",
       "details": [
         {"icon": "book", "text": "4 Courses"},
@@ -17,7 +17,7 @@
     {
       "id": 2,
       "title": "2nd Semester",
-      "imageUrl": "/images/2nd_semester.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (1).png",
       "price": "6,000",
       "details": [
         {"icon": "book", "text": "4 Courses"},
@@ -31,7 +31,7 @@
     {
       "id": 3,
       "title": "3rd Semester",
-      "imageUrl": "/images/3rd_semester.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (2).png",
       "price": "7,000",
       "details": [
         {"icon": "book", "text": "4 Courses"},
@@ -45,7 +45,7 @@
     {
       "id": 4,
       "title": "4th Semester",
-      "imageUrl": "/images/4th_semester.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (3).png",
       "price": "10,000",
       "details": [
         {"icon": "book", "text": "4 Courses"},
@@ -59,7 +59,7 @@
     {
       "id": 5,
       "title": "5th Semester",
-      "imageUrl": "/images/5th_semester.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (4).png",
       "price": "12,000",
       "details": [
         {"icon": "book", "text": "4 Courses"},
@@ -73,7 +73,7 @@
     {
       "id": 6,
       "title": "6th Semester",
-      "imageUrl": "/images/6th_semester.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (5).png",
       "price": "14,000",
       "details": [
         {"icon": "book", "text": "4 Courses"},
@@ -87,7 +87,7 @@
     {
       "id": 7,
       "title": "7th Semester",
-      "imageUrl": "/images/7th_semester.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (6).png",
       "price": "16,000",
       "details": [
         {"icon": "book", "text": "4 Courses"},
@@ -101,7 +101,7 @@
     {
       "id": 8,
       "title": "Industrial Attachment",
-      "imageUrl": "/images/industrial_attachment.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (7).png",
       "price": "19,000",
       "details": [
         {"icon": "book", "text": "4 Courses"},
@@ -117,7 +117,7 @@
     {
       "id": 9,
       "title": "AutoCAD Basic",
-      "imageUrl": "/images/autocad_basic.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (8).png",
       "price": "12,000",
       "details": [
         {"icon": "class", "text": "48 Classes"},
@@ -132,7 +132,7 @@
     {
       "id": 10,
       "title": "AutoCAD Premium",
-      "imageUrl": "/images/autocad_premium.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (9).png",
       "price": "12,000",
       "details": [
         {"icon": "class", "text": "48 Classes"},
@@ -147,7 +147,7 @@
     {
       "id": 11,
       "title": "AutoCAD 3D",
-      "imageUrl": "/images/autocad_3d.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (10).png",
       "price": "12,000",
       "details": [
         {"icon": "class", "text": "48 Classes"},
@@ -162,7 +162,7 @@
     {
       "id": 12,
       "title": "Graphic Design",
-      "imageUrl": "/images/graphic_design.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (11).png",
       "price": "12,000",
       "details": [
         {"icon": "class", "text": "48 Classes"},
@@ -177,7 +177,7 @@
     {
       "id": 13,
       "title": "Digital Marketing",
-      "imageUrl": "/images/digital_marketing.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (12).png",
       "price": "12,000",
       "details": [
         {"icon": "class", "text": "48 Classes"},
@@ -192,7 +192,7 @@
     {
       "id": 14,
       "title": "Web Design",
-      "imageUrl": "/images/web_design.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (13).png",
       "price": "12,000",
       "details": [
         {"icon": "class", "text": "48 Classes"},
@@ -207,7 +207,7 @@
     {
       "id": 15,
       "title": "Web Development",
-      "imageUrl": "/images/web_development.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (14).png",
       "price": "12,000",
       "details": [
         {"icon": "class", "text": "48 Classes"},
@@ -222,7 +222,7 @@
     {
       "id": 16,
       "title": "Basic Computer",
-      "imageUrl": "/images/basic_computer.jpg",
+      "imageUrl": "/dashboardImage/Rectangle 63 (15).png",
       "price": "12,000",
       "details": [
         {"icon": "class", "text": "48 Classes"},

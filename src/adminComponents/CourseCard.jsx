@@ -53,17 +53,18 @@ const CourseCard = ({ course }) => {
                     className="w-full h-full object-cover"
                 />
                 <button
-                    className="absolute top-3 right-3 bg-white/90 p-1.5 rounded-full shadow-lg text-gray-700 hover:bg-white transition-colors"
+                    className="absolute top-3 right-3 bg-[#FFFFFF99] p-1.5 rounded-md shadow-lg text-gray-700 "
                     aria-label={`Edit ${title} course`}
                 >
                     {/* Placeholder for Edit Icon */}
                     <span className="text-sm">📝 Edit</span>
                 </button>
+                <h3 className="text-base -mt-10 font-semibold text-white p-1 mb-3">{title}</h3>
             </div>
 
             {/* --- Course Content --- */}
             <div className="p-4">
-                <h3 className="text-base font-semibold text-gray-800 mb-3">{title}</h3>
+                
 
                 {/* Course Details Grid */}
                 <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-gray-600 mb-3 ">
