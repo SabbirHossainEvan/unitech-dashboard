@@ -1,7 +1,11 @@
 import React from 'react'
-
+import HeroSlider from '../adminComponents/HeroSlider'
 export default function Banners() {
   return (
-    <div>Banners</div>
+    <div>
+      <section>
+        <HeroSlider></HeroSlider>
+      </section>
+    </div>
   )
 }
