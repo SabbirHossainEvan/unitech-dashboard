@@ -137,7 +137,7 @@ import { NavLink } from 'react-router-dom';
 const menuItems = [
   { name: 'Dashboard', icon: LayoutDashboard, link: '/admin' },
   { name: 'Banners', icon: Image, link: '/admin/banners' },
-  { name: 'User Details', icon: User, link: '/user-details' },
+  { name: 'User Details', icon: User, link: '/admin/user-details' },
   { name: 'Manage Accounts', icon: Users, link: '/manage-accounts' },
   { name: 'Payment Info', icon: CreditCard, link: '/payment-info' },
   { name: 'Announcement', icon: Megaphone, link: '/announcement' },

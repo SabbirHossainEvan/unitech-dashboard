@@ -6,6 +6,7 @@ import StudentDashboard from "../layouts/StudentDashboard";
 import Dashboard from "../adminPages/Dashboard";
 import Banners from "../adminPages/Banners";
 import CourseDetailsCard from "../adminComponents/CourseDetailsCard";
+import UserDetails from "../adminPages/UserDetails";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: "banners",
                 element: <Banners></Banners>
+            },
+            {
+                path: "/admin/user-details",
+                element: <UserDetails></UserDetails>
             }
         ]
     },
