@@ -32,7 +32,6 @@ const courseData = {
 };
 
 
-// Component for the small stat boxes (4 Courses, 48 Classes, etc.)
 const StatBadge = ({ label, value }) => (
   <div className="flex items-center space-x-1 border border-gray-300 rounded-lg px-3 py-1 text-sm font-medium text-gray-700 hover:bg-gray-50 transition duration-150">
     <span className="text-sm font-semibold">{value}</span>
@@ -65,20 +64,21 @@ const CourseDetailsCard = ({ course = courseData }) => {
 
   return (
     // Max width to contain the card on the dashboard
-    <div className=" mx-auto bg-white p-6 shadow-2xl rounded-xl border border-gray-100">
+    <div className=" mx-auto bg-white p-6  ">
       <div className="grid md:grid-cols-2 gap-8">
         
         {/* --- Left Column (Content) --- */}
         <div>
-          <h1 className="text-3xl font-extrabold text-gray-900 mb-1">
+          <h1 className="text-3xl font-bold text-gray-900 mb-1">
             {course.title}
           </h1>
-          <p className="text-xl font-bold text-orange-600 mb-4">
+          <p className="text-xl font-bold mb-4">
             ({course.price})
           </p>
 
           {/* Stats Row 1 */}
           <div className="flex flex-wrap gap-2 mb-2">
+            
             {topStats.map((stat, index) => (
               <StatBadge key={index} label={stat.label} value={stat.value} />
             ))}
@@ -108,7 +108,7 @@ const CourseDetailsCard = ({ course = courseData }) => {
               <span>Course Curriculum</span>
               {/* Chevron icon that rotates based on state */}
               <svg
-                className={`w-5 h-5 transition-transform duration-300 ${isCurriculumOpen ? 'rotate-180 text-orange-600' : 'rotate-0 text-gray-500'}`}
+                className={`w-5 h-5 transition-transform duration-300 ${isCurriculumOpen ? 'rotate-180 text-[#F89521]' : 'rotate-0 text-gray-500'}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -136,7 +136,7 @@ const CourseDetailsCard = ({ course = courseData }) => {
 
           {/* Enrollment and Rating */}
           <div className="flex flex-col sm:flex-row items-center justify-between pt-4 border-t border-gray-100">
-            <button className="w-full sm:w-auto px-10 py-3 bg-orange-500 text-white font-bold rounded-xl hover:bg-orange-600 transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02]">
+            <button className="w-full sm:w-auto px-10 py-3 bg-[#F89521] text-white font-bold rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02]">
               Enroll Now
             </button>
             <div className="flex items-center mt-4 sm:mt-0">
@@ -159,7 +159,7 @@ const CourseDetailsCard = ({ course = courseData }) => {
           <img
             src={course.image}
             alt={`${course.title} course image`}
-            className="w-full h-full object-cover rounded-xl shadow-inner border border-gray-100"
+            className="w-full  object-cover  shadow-inner border border-gray-100"
           />
         </div>
       </div>
