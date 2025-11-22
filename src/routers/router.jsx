@@ -5,6 +5,7 @@ import InstructorDashboard from "../layouts/InstructorDashboard";
 import StudentDashboard from "../layouts/StudentDashboard";
 import Dashboard from "../adminPages/Dashboard";
 import Banners from "../adminPages/Banners";
+import CourseDetailsCard from "../adminComponents/CourseDetailsCard";
 
 const router = createBrowserRouter([
     {
@@ -17,10 +18,14 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Dashboard></Dashboard>
+                element: <Dashboard></Dashboard>,
             },
             {
-                path: "/admin/banners",
+                path: "course",
+                element: <CourseDetailsCard></CourseDetailsCard>
+            },
+            {
+                path: "banners",
                 element: <Banners></Banners>
             }
         ]

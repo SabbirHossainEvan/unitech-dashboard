@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const getIcon = (iconType) => {
     switch (iconType) {
@@ -64,7 +65,7 @@ const CourseCard = ({ course }) => {
 
             {/* --- Course Content --- */}
             <div className="p-4">
-                
+
 
                 {/* Course Details Grid */}
                 <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-gray-600 mb-3 ">
@@ -98,11 +99,13 @@ const CourseCard = ({ course }) => {
                 </div>
 
                 {/* Enroll Button */}
-                <button className="w-full bg-[#F89521] text-white font-bold py-2 rounded-md 
+                <Link to={"/admmin/course"}>
+                    <button className="w-full bg-[#F89521] text-white font-bold py-2 rounded-md 
                            hover:border hover:border-[#955914] hover:text-gray-600 hover:bg-gray-50 transition-colors duration-200 shadow-lg 
                            text-sm uppercase tracking-wider">
-                    Enroll Now
-                </button>
+                        Enroll Now
+                    </button>
+                </Link>
             </div>
         </div>
     );
