@@ -71,13 +71,13 @@ const UserListSection = ({ users, totalUsers }) => {
                         <thead className="bg-gray-50">
                             <tr className='w-full justify-between flex'>
                                 {/* Width adjusted for stacked content */}
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-full">
                                     User
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs ml-25 font-medium text-gray-500 uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs  font-medium text-gray-500 uppercase tracking-wider w-full">
                                     User ID
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs ml-5 font-medium text-gray-500 uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs  font-medium text-gray-500 uppercase tracking-wider w-full">
                                     Course
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider ">
@@ -114,7 +114,7 @@ const UserListSection = ({ users, totalUsers }) => {
                                             {user.userId}
                                         </span>
                                     </td>
-                                    <td>
+                                    <td className='mr-6'>
                                         <span className="text-green-600">
                                                 {user.status}
                                             </span>
