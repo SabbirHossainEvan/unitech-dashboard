@@ -23,7 +23,7 @@ const mockUsers = Array(20).fill(mockUser).map((user, index) => ({
 // --- REACT COMPONENT ---
 const UserListSection = ({ users, totalUsers }) => {
     return (
-        <div className="bg-white rounded-lg shadow-lg border border-gray-200">
+        <div className="bg-white rounded-lg  border border-gray-200">
 
             {/* --- Top Filter/Header Bar --- */}
             <div className="flex items-center justify-between p-4 border-b border-gray-200">
@@ -109,7 +109,7 @@ const UserListSection = ({ users, totalUsers }) => {
                                             {user.course}
                                         </div>
                                     </td>
-                                    <td>
+                                    <td className='mr-10'>
                                         <span className="text-xs text-gray-500 font-normal">
                                             {user.userId}
                                         </span>

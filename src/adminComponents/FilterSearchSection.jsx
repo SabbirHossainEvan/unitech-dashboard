@@ -1,4 +1,4 @@
-// File: FilterSearchSection.jsx
+
 import React, { useState } from 'react';
 
 const FilterSearchSection = ({ onSearch, onReset }) => {
@@ -6,7 +6,6 @@ const FilterSearchSection = ({ onSearch, onReset }) => {
   const [userId, setUserId] = useState('');
 
   const handleSearch = () => {
-    // Call the onSearch prop with the current filter values
     if (onSearch) {
       onSearch({ name, userId });
     }
@@ -16,14 +15,13 @@ const FilterSearchSection = ({ onSearch, onReset }) => {
     // Reset local state
     setName('');
     setUserId('');
-    // Call the onReset prop (if provided) to clear filters in the parent component
     if (onReset) {
       onReset();
     }
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 max-w-sm">
+    <div className="bg-white rounded-lg shadow-lg p-6 ">
       <h3 className="text-xl font-bold text-gray-800 mb-6">Filter Search</h3>
 
       {/* Name Input */}
