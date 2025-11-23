@@ -179,7 +179,7 @@ const BannerUpdateSection = () => {
                     </div>
                 </div>
 
-                {/* === Right Column: Banner Customization === */}
+
                 <div className="lg:col-span-1 bg-white p-6 rounded-xl shadow-lg h-fit">
                     <h2 className="text-xl font-medium text-gray-700 mb-6">Banner Customization</h2>
 

@@ -1,10 +1,6 @@
-// Save this file as UserListSection.jsx
 
 import React from 'react';
 
-// --- DATA DEFINITIONS (Simplified for pure JavaScript/JSX) ---
-// Note: In a pure JS file, you often define object structures inline 
-// or rely on JSDoc comments for documentation instead of TypeScript interfaces.
 
 const mockUser = {
     id: '1',
@@ -13,10 +9,10 @@ const mockUser = {
     course: '1st semester',
     semester: '1st semester',
     status: 'Active',
-    avatarUrl: 'https://i.pravatar.cc/150?img=1', // Placeholder avatar
+    avatarUrl: 'https://i.pravatar.cc/150?img=1', 
 };
 
-// Create an array of mock data to populate the example
+// Creates a list of 20 mock users
 const mockUsers = Array(20).fill(mockUser).map((user, index) => ({
     ...user,
     id: String(index + 1),
@@ -25,13 +21,13 @@ const mockUsers = Array(20).fill(mockUser).map((user, index) => ({
 
 
 // --- REACT COMPONENT ---
-// Component is a regular functional component accepting props
 const UserListSection = ({ users, totalUsers }) => {
   return ( 
     <div className="bg-white rounded-lg shadow-lg border border-gray-200">
       
       {/* --- Top Filter/Header Bar --- */}
       <div className="flex items-center justify-between p-4 border-b border-gray-200">
+        {/* Filters */}
         <div className="flex items-center space-x-4 text-sm font-semibold text-gray-700">
           <div className="flex items-center space-x-2">
             <span className="text-gray-500">Status</span>
@@ -54,9 +50,9 @@ const UserListSection = ({ users, totalUsers }) => {
           </div>
         </div>
 
+        {/* Download Button */}
         <button className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 text-sm font-medium">
           <span>Download the list (PDF)</span>
-          {/* SVG for download icon */}
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 11.586V3a1 1 0 112 0v8.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
           </svg>
@@ -72,9 +68,10 @@ const UserListSection = ({ users, totalUsers }) => {
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
             
-            {/* --- Table Header --- */}
+            {/* --- Table Header (Fixed) --- */}
             <thead className="bg-gray-50">
               <tr>
+                {/* Width adjusted for stacked content */}
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/4">
                   User
                 </th>
@@ -90,10 +87,11 @@ const UserListSection = ({ users, totalUsers }) => {
               </tr>
             </thead>
 
-            {/* --- Table Body (Scrollable part) --- */}
+            {/* --- Table Body (Scrollable) --- */}
             <tbody className="bg-white divide-y divide-gray-200 block max-h-96 overflow-y-auto w-full">
               {users.map((user) => (
                 <tr key={user.id} className="flex w-full">
+                  {/* *************** THE COLUMN FIX IS HERE *************** */}
                   <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4 flex items-center">
                     {/* User Avatar */}
                     <img
@@ -101,10 +99,21 @@ const UserListSection = ({ users, totalUsers }) => {
                       src={user.avatarUrl}
                       alt={user.name}
                     />
-                    {user.name}
+                    {/* Stacked Name and ID using flex/column */}
+                    <div className="flex flex-col">
+                        <span className="font-medium text-gray-900">
+                            {user.name}
+                        </span>
+                        {/* User ID - Smaller font and lighter color */}
+                        <span className="text-xs text-gray-500 font-normal">
+                            {user.userId}
+                        </span>
+                    </div>
                   </td>
+                  {/* ****************************************************** */}
+
                   <td className="px-6 py-2 whitespace-nowrap text-sm text-gray-500 w-1/4">
-                    {user.userId}
+                    1st semester 
                   </td>
                   <td className="px-6 py-2 whitespace-nowrap text-sm text-gray-500 w-1/4">
                     {user.course}
@@ -124,4 +133,5 @@ const UserListSection = ({ users, totalUsers }) => {
   );
 };
 
+// Use named exports
 export { UserListSection, mockUsers };
