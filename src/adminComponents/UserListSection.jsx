@@ -31,14 +31,14 @@ const UserListSection = ({ users, totalUsers }) => {
                 <div className="flex items-center space-x-4 text-sm font-semibold text-gray-700">
                     <div className="flex items-center space-x-2">
                         <span className="text-gray-500">Status</span>
-                        <select className="border border-gray-300 rounded-md py-1 px-3 text-sm focus:ring-blue-500 focus:border-blue-500">
+                        <select className="border border-gray-300 rounded-md py-1 px-3 text-sm focus:ring-orange-400 focus:border-[#F89521]">
                             <option>Active</option>
                             <option>Inactive</option>
                         </select>
                     </div>
                     <div className="flex items-center space-x-2">
                         <span className="text-gray-500">Course</span>
-                        <select className="border border-gray-300 rounded-md py-1 px-3 text-sm focus:ring-blue-500 focus:border-blue-500">
+                        <select className="border border-gray-300 rounded-md py-1 px-3 text-sm focus:ring-orange-500 focus:border-orange-500">
                             <option>Academic</option>
                         </select>
                     </div>
