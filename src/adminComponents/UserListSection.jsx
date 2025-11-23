@@ -90,7 +90,7 @@ const UserListSection = ({ users, totalUsers }) => {
                         <tbody className="bg-white divide-gray-200 block">
                             {users.map((user) => (
                                 <tr key={user.id} className="w-full justify-between flex">
-                                    <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900  flex items-center">
+                                    <td className=" whitespace-nowrap text-sm font-medium text-gray-900  flex items-center">
                                         {/* User Avatar */}
                                         <img
                                             className="h-7 w-7 rounded-full mr-3 object-cover"
@@ -104,12 +104,12 @@ const UserListSection = ({ users, totalUsers }) => {
                                             </span>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td >
                                         <div className="px-6 py-2 whitespace-nowrap text-sm text-gray-500">
                                             {user.course}
                                         </div>
                                     </td>
-                                    <td className='mr-10'>
+                                    <td className='mr-8'>
                                         <span className="text-xs text-gray-500 font-normal">
                                             {user.userId}
                                         </span>
