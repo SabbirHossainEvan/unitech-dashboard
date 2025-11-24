@@ -5,10 +5,10 @@ import DashboardSummaryCards from './DashboardSummaryCards'
 export default function UserProfile() {
   return (
     <div className='flex'>
-        <section>
+        <section className='w-full'>
             <UserProfileSection></UserProfileSection>
         </section>
-        <section>
+        <section className=''>
             <DashboardSummaryCards></DashboardSummaryCards>
         </section>
     </div>

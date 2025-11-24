@@ -1,9 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-// ----------------------------------------------------------------------
-// 🔄 CircularProgressCard Component
-// This component draws an animated circular progress indicator.
-// ----------------------------------------------------------------------
 
 const CircularProgressCard = ({
   percentage,
