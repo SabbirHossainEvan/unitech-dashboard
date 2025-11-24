@@ -1,0 +1,59 @@
+import React from 'react'
+
+const mockUser2 = {
+    id: '1',
+    name: 'Sarah Khan',
+    userId: '02722111218107',
+    due: 'TK. 1000',
+    semester: '1st semester',
+    status: 'UNBLOCKE',
+    avatarUrl: 'https://i.pravatar.cc/150?img=1',
+};
+
+// Creates a list of 20 mock users
+const mockUsers2 = Array(20).fill(mockUser2).map((user, index) => ({
+    ...user,
+    id: String(index + 1),
+    avatarUrl: `https://i.pravatar.cc/150?img=${1 + (index % 10)}`,
+}));
+
+const UserAccountList = ({users, totalUsers}) => {
+    return (
+        <div className="bg-white rounded-lg  border border-gray-200">
+            <div className="flex items-center justify-between p-4 border-b border-gray-200">
+                {/* Filters */}
+                <div className="flex items-center space-x-4 text-sm font-semibold text-gray-700">
+                    <div className="flex items-center space-x-2">
+                        <span className="text-gray-500">Status</span>
+                        <select className="border border-gray-300 rounded-md py-1 px-3 text-sm  focus:ring-orange-400 focus:border-[#F89521]">
+                            <option>Blocked</option>
+                            <option>Unblocke</option>
+                        </select>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <span className="text-gray-500">Course</span>
+                        <select className="border border-gray-300 rounded-md py-1 px-3 text-sm focus:ring-orange-500 focus:border-orange-500">
+                            <option>Academic</option>
+                        </select>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <span className="text-gray-500">Semester</span>
+                        <select className="border border-gray-300 rounded-md py-1 px-3 text-sm focus:ring-blue-500 focus:border-blue-500">
+                            <option>1st semester</option>
+                        </select>
+                    </div>
+                </div>
+
+                {/* Download Button */}
+                <button className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 text-sm font-medium">
+                    <span>Download the list (PDF)</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 11.586V3a1 1 0 112 0v8.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export { UserAccountList, mockUsers2  };
