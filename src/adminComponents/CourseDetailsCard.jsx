@@ -55,10 +55,9 @@ const CurriculumItem = ({ item }) => (
 
 
 const CourseDetailsCard = ({ course = courseData }) => {
-  // State to control the curriculum dropdown (dynamic feature)
+
   const [isCurriculumOpen, setIsCurriculumOpen] = useState(true);
 
-  // Separate stats into top row (first 3) and bottom row (last 2) for layout flexibility
   const topStats = course.stats.slice(0, 3);
   const bottomStats = course.stats.slice(3);
 

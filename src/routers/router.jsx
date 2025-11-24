@@ -8,6 +8,7 @@ import Banners from "../adminPages/Banners";
 import CourseDetailsCard from "../adminComponents/CourseDetailsCard";
 import UserDetails from "../adminPages/UserDetails";
 import UserProfile from "../adminComponents/UserProfile";
+import ManageAccounts from "../adminPages/ManageAccounts";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path: "/admin/user-details/user-profile",
                 element: <UserProfile></UserProfile>
+            },
+            {
+                path: "/admin/manage-accounts",
+                element: <ManageAccounts></ManageAccounts>
             }
         ]
     },

@@ -92,35 +92,36 @@ const UserListSection = ({ users, totalUsers }) => {
                             {users.map((user) => (
                                 <tr key={user.id} className="w-full justify-between flex">
                                     <Link to={"/admin/user-details/user-profile"}>
-                                    <td className=" whitespace-nowrap text-sm font-medium text-gray-900  flex items-center">
-                                        {/* User Avatar */}
-                                        <img
-                                            className="h-7 w-7 rounded-full mr-3 object-cover"
-                                            src={user.avatarUrl}
-                                            alt={user.name}
-                                        />
-                                        <div className="flex flex-col">
-                                            <span className="font-medium text-gray-900">
-                                                {user.name}
-                                            </span>
-                                        </div>
-                                    </td>
+                                        <td className=" whitespace-nowrap text-sm font-medium text-gray-900  flex items-center">
+                                            {/* User Avatar */}
+                                            <img
+                                                className="h-7 w-7 rounded-full mr-3 object-cover"
+                                                src={user.avatarUrl}
+                                                alt={user.name}
+                                            />
+                                            <div className="flex flex-col">
+                                                <span className="font-medium text-gray-900">
+                                                    {user.name}
+                                                </span>
+                                            </div>
+                                        </td>
                                     </Link>
-                                    
+                                    <td className=''>
+                                        <span className="text-xs text-gray-500 font-normal">
+                                            {user.userId}
+                                        </span>
+                                    </td>
+
                                     <td >
                                         <div className="px-6 py-2 whitespace-nowrap text-sm text-gray-500">
                                             {user.course}
                                         </div>
                                     </td>
-                                    <td className='mr-8'>
-                                        <span className="text-xs text-gray-500 font-normal">
-                                            {user.userId}
-                                        </span>
-                                    </td>
+
                                     <td className='mr-6'>
                                         <span className="text-green-600">
-                                                {user.status}
-                                            </span>
+                                            {user.status}
+                                        </span>
                                     </td>
                                 </tr>
                             ))}
