@@ -1,12 +1,13 @@
 import React from 'react'
 
+// Define mock user data for display and stability
 const mockUser2 = {
     id: '1',
     name: 'Sarah Khan',
     userId: '02722111218107',
-    due: 'TK. 1000',
+    due: 'Tk. 1,000',
     semester: '1st semester',
-    status: 'UNBLOCKE',
+    status: 'UNBLOCKED',
     avatarUrl: 'https://i.pravatar.cc/150?img=1',
 };
 
@@ -17,17 +18,19 @@ const mockUsers2 = Array(20).fill(mockUser2).map((user, index) => ({
     avatarUrl: `https://i.pravatar.cc/150?img=${1 + (index % 10)}`,
 }));
 
-const UserAccountList = ({users, totalUsers}) => {
+
+// FIX: Set mockUsers2 as the default for 'users' to ensure data always loads if none is passed.
+const UserAccountList = ({ users = mockUsers2, totalUsers = users.length }) => { 
     return (
-        <div className="bg-white rounded-lg  border border-gray-200">
+        <div className="bg-white rounded-lg border border-gray-200">
             <div className="flex items-center justify-between p-4 border-b border-gray-200">
-                {/* Filters */}
+                {/* Filters Section (No changes) */}
                 <div className="flex items-center space-x-4 text-sm font-semibold text-gray-700">
                     <div className="flex items-center space-x-2">
                         <span className="text-gray-500">Status</span>
                         <select className="border border-gray-300 rounded-md py-1 px-3 text-sm  focus:ring-orange-400 focus:border-[#F89521]">
                             <option>Blocked</option>
-                            <option>Unblocke</option>
+                            <option>Unblocked</option>
                         </select>
                     </div>
                     <div className="flex items-center space-x-2">
@@ -52,8 +55,81 @@ const UserAccountList = ({users, totalUsers}) => {
                     </svg>
                 </button>
             </div>
+
+            {/* --- User Count and Table Container --- */}
+            <div className="p-4">
+                <div className="mb-3 text-sm font-medium text-gray-500">
+                    Users ({totalUsers})
+                </div>
+
+                <div className="overflow-x-auto">
+                    <table className="min-w-full divide-y divide-gray-200">
+
+                        <thead className="bg-gray-50">
+                            {/* FIX: Removed conflicting flex/w-full classes */}
+                            <tr> 
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    User
+                                </th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    User ID
+                                </th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Due
+                                </th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Status
+                                </th>
+                            </tr>
+                        </thead>
+
+                        {/* FIX: Removed 'block' from tbody and uses standard table flow */}
+                        <tbody className="bg-white divide-y divide-gray-200"> 
+                            {users.map((user) => (
+                                <tr key={user.id} className="hover:bg-gray-50"> 
+                                    
+                                    {/* Column 1: User (Name and Avatar) */}
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                        {/* FIX: Uses <span> instead of <Link> for stability */}
+                                        <span className="flex items-center cursor-pointer">
+                                            {/* User Avatar */}
+                                            <img
+                                                className="h-7 w-7 rounded-full mr-3 object-cover"
+                                                src={user.avatarUrl}
+                                                alt={user.name}
+                                            />
+                                            <span className="font-medium text-gray-900">
+                                                {user.name}
+                                            </span>
+                                        </span>
+                                    </td>
+                                    
+                                    {/* Column 2: User ID */}
+                                    <td className='px-6 py-4 whitespace-nowrap'> 
+                                        <span className="text-sm text-gray-500 font-normal">
+                                            {user.userId}
+                                        </span>
+                                    </td>
+
+                                    {/* Column 3: Due */}
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                        {user.due}
+                                    </td>
+
+                                    {/* Column 4: Status */}
+                                    <td className='px-6 py-4 whitespace-nowrap'> 
+                                        <span className={`text-sm font-semibold ${user.status === 'BLOCKED' ? 'text-red-600' : 'text-green-600'}`}>
+                                            {user.status}
+                                        </span>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     );
 };
 
-export { UserAccountList, mockUsers2  };
+export { UserAccountList, mockUsers2 };
