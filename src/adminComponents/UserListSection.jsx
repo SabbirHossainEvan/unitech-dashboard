@@ -97,7 +97,6 @@ const UserListSection = ({ users, totalUsers }) => {
                                             src={user.avatarUrl}
                                             alt={user.name}
                                         />
-                                        {/* Stacked Name and ID using flex/column */}
                                         <div className="flex flex-col">
                                             <span className="font-medium text-gray-900">
                                                 {user.name}
