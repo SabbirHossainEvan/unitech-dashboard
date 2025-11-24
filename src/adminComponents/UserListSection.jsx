@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router';
 
 
 const mockUser = {
@@ -90,6 +91,7 @@ const UserListSection = ({ users, totalUsers }) => {
                         <tbody className="bg-white divide-gray-200 block">
                             {users.map((user) => (
                                 <tr key={user.id} className="w-full justify-between flex">
+                                    <Link to={"/admin/user-details/user-profile"}>
                                     <td className=" whitespace-nowrap text-sm font-medium text-gray-900  flex items-center">
                                         {/* User Avatar */}
                                         <img
@@ -103,6 +105,8 @@ const UserListSection = ({ users, totalUsers }) => {
                                             </span>
                                         </div>
                                     </td>
+                                    </Link>
+                                    
                                     <td >
                                         <div className="px-6 py-2 whitespace-nowrap text-sm text-gray-500">
                                             {user.course}
