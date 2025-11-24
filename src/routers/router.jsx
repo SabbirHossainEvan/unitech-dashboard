@@ -7,6 +7,7 @@ import Dashboard from "../adminPages/Dashboard";
 import Banners from "../adminPages/Banners";
 import CourseDetailsCard from "../adminComponents/CourseDetailsCard";
 import UserDetails from "../adminPages/UserDetails";
+import UserProfile from "../adminComponents/UserProfile";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path: "/admin/user-details",
                 element: <UserDetails></UserDetails>
+            },
+            {
+                path: "user-profile",
+                element: <UserProfile></UserProfile>
             }
         ]
     },
