@@ -1,7 +1,10 @@
 import React from 'react'
+import AnnouncementFeed from '../adminComponents/AnnouncementFeed'
 
 export default function Annoucement() {
   return (
-    <div>Annoucement</div>
+    <div>
+        <AnnouncementFeed></AnnouncementFeed>
+    </div>
   )
 }
