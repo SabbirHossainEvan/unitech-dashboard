@@ -140,7 +140,7 @@ const menuItems = [
   { name: 'User Details', icon: User, link: '/admin/user-details' },
   { name: 'Manage Accounts', icon: Users, link: '/admin/manage-accounts' },
   { name: 'Payment Info', icon: CreditCard, link: '/admin/payment-info' },
-  { name: 'Announcement', icon: Megaphone, link: '/announcement' },
+  { name: 'Announcement', icon: Megaphone, link: '/admin/announcement' },
   { name: 'Settings', icon: Settings, link: '/settings' },
   { name: 'Exit', icon: LogOut, link: '/exit' },
 ];

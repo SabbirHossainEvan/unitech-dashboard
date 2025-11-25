@@ -74,7 +74,7 @@ const FeePaymentStatusTable = ({ initialData = initialExampleData }) => {
 
 
   return (
-    <div className="bg-white shadow-xl rounded-lg p-4 max-w-full overflow-x-auto">
+    <div className="bg-white  rounded-lg p-4 max-w-full overflow-x-auto">
       {/* --- Header Section --- */}
       <div className="flex justify-between items-center mb-4 border-b pb-4">
         <div className="flex space-x-2 text-sm">
