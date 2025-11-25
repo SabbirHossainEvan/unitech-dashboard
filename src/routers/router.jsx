@@ -11,6 +11,7 @@ import UserProfile from "../adminComponents/UserProfile";
 import ManageAccounts from "../adminPages/ManageAccounts";
 import PaymentInfo from "../adminPages/PaymentInfo";
 import Annoucement from "../adminPages/Annoucement";
+import Settings from "../adminPages/Settings";
 
 const router = createBrowserRouter([
     {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
             {
                 path: "/admin/announcement",
                 element: <Annoucement></Annoucement>
+            },
+            {
+                path: "/admin/settings",
+                element: <Settings></Settings>
             }
         ]
     },

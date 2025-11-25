@@ -141,7 +141,7 @@ const menuItems = [
   { name: 'Manage Accounts', icon: Users, link: '/admin/manage-accounts' },
   { name: 'Payment Info', icon: CreditCard, link: '/admin/payment-info' },
   { name: 'Announcement', icon: Megaphone, link: '/admin/announcement' },
-  { name: 'Settings', icon: Settings, link: '/settings' },
+  { name: 'Settings', icon: Settings, link: '/admin/settings' },
   { name: 'Exit', icon: LogOut, link: '/exit' },
 ];
 
