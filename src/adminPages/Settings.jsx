@@ -1,7 +1,12 @@
 import React from 'react'
+import UserProfileForm from '../adminComponents/UserProfileForm'
 
 export default function Settings() {
   return (
-    <div>Settings</div>
+    <div>
+        <section>
+            <UserProfileForm></UserProfileForm>
+        </section>
+    </div>
   )
 }
