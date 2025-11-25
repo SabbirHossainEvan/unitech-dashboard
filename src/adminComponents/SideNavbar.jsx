@@ -142,7 +142,7 @@ const menuItems = [
   { name: 'Payment Info', icon: CreditCard, link: '/admin/payment-info' },
   { name: 'Announcement', icon: Megaphone, link: '/admin/announcement' },
   { name: 'Settings', icon: Settings, link: '/admin/settings' },
-  { name: 'Exit', icon: LogOut, link: '/exit' },
+  { name: 'Exit', icon: LogOut, link: '/admin/exit' },
 ];
 
 const SideNavbar = () => { 

@@ -12,6 +12,7 @@ import ManageAccounts from "../adminPages/ManageAccounts";
 import PaymentInfo from "../adminPages/PaymentInfo";
 import Annoucement from "../adminPages/Annoucement";
 import Settings from "../adminPages/Settings";
+import Exit from "../adminPages/Exit";
 
 const router = createBrowserRouter([
     {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
             {
                 path: "/admin/settings",
                 element: <Settings></Settings>
+            },
+            {
+                path: "/admin/exit",
+                element: <Exit></Exit>
             }
         ]
     },
