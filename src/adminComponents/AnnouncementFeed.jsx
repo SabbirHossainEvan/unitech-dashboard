@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
-
-// --- 1. Example Data Structure (Updated with 'url' for download) ---
 const initialAnnouncements = [
     {
         id: 1,
         author: 'Olivia Rhye',
         role: 'Mechanical Instructor',
-        avatarUrl: '/path/to/olivia-avatar.png', // Replace with actual URL
+        avatarUrl: '/Avatar (1).png', 
         content: 'Hey dear students, hope you are doing well, here is your class lesson',
         file: {
             name: 'Tech requirements.pdf',
             size: '200 KB',
-            url: '/files/tech_requirements.pdf' // <-- Added a mock download URL
+            url: '/files/tech_requirements.pdf'
         },
         date: '02 January, 2024',
         time: '10 am',
@@ -20,15 +18,14 @@ const initialAnnouncements = [
         id: 2,
         author: 'Olivia Rhye',
         role: 'Mechanical Instructor',
-        avatarUrl: '/path/to/olivia-avatar.png',
+        avatarUrl: '/Avatar (1).png',
         content: 'The due date for the first assignment has been extended by one week. Please check the updated syllabus.',
-        file: null, // Example of a post without a file
+        file: null, 
         date: '25 November, 2023',
         time: '4 pm',
     },
 ];
 
-// --- 2. Post Creation Form Component ---
 const AnnouncementForm = ({ onPost }) => {
     const [content, setContent] = useState('');
     const [file, setFile] = useState(null);
@@ -41,12 +38,11 @@ const AnnouncementForm = ({ onPost }) => {
         setIsPosting(true);
 
         const newPost = {
-            id: Date.now(), // Unique ID
-            author: 'Current User', // Replace with actual user name
-            role: 'Admin/Teacher', // Replace with actual user role
+            id: Date.now(),
+            author: 'Current User', 
+            role: 'Admin/Teacher', 
             avatarUrl: '/path/to/user-avatar.png',
             content: content.trim(),
-            // Ensure new posts also include a mock URL if a file is attached
             file: file ? {
                 name: file.name,
                 size: `${(file.size / 1024).toFixed(0)} KB`,
@@ -56,7 +52,7 @@ const AnnouncementForm = ({ onPost }) => {
             time: new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }),
         };
 
-        // Simulate API delay
+
         setTimeout(() => {
             onPost(newPost);
             setContent('');
@@ -136,7 +132,7 @@ const AnnouncementForm = ({ onPost }) => {
     );
 };
 
-// --- 3. Single Announcement Card Component (Updated for download link) ---
+
 const AnnouncementCard = ({ post }) => (
     <div className="bg-white p-6 mb-2 rounded-xl shadow-sm border border-gray-200">
         <div className="flex justify-between items-start mb-4">
@@ -152,8 +148,8 @@ const AnnouncementCard = ({ post }) => (
             {/* Download Link */}
             {post.file && (
                 <a
-                    href={post.file.url} // <-- Uses the file URL
-                    download={post.file.name} // <-- Prompts browser to download with file name
+                    href={post.file.url} 
+                    download={post.file.name} 
                     className="flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors text-sm"
                 >
                     Download the PDF
@@ -185,10 +181,9 @@ const AnnouncementCard = ({ post }) => (
 
 // --- 4. Main Feed Component ---
 const AnnouncementFeed = () => {
-    // State to hold the dynamic list of announcements
+
     const [announcements, setAnnouncements] = useState(initialAnnouncements);
 
-    // Function to add a new post to the top of the feed
     const handleNewPost = (newPost) => {
         setAnnouncements([newPost, ...announcements]);
     };

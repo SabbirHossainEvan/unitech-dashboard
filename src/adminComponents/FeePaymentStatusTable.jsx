@@ -7,7 +7,7 @@ const createSarahKhanRecords = (count) => {
   for (let i = 1; i <= count; i++) {
     records.push({
       id: startId + i,
-      user: { name: 'Sarah Khan', avatar: '/path/to/sarah-avatar.png' }, 
+      user: { name: 'Sarah Khan', avatar: '/Avatar (1).png' }, 
       course: '1st semester',
       courseFee: 12000,
       installment: '#First installment',
@@ -26,7 +26,7 @@ const initialExampleData = [
 
   {
     id: 1, 
-    user: { name: 'Ahmed Ali', avatar: '/path/to/ahmed-avatar.png' },
+    user: { name: 'Ahmed Ali', avatar: '/Avatar (1).png' },
     course: '2nd semester',
     courseFee: 15000,
     installment: '#Second installment',
@@ -36,7 +36,7 @@ const initialExampleData = [
   },
   {
     id: 2, 
-    user: { name: 'Fatima Zafar', avatar: '/path/to/fatima-avatar.png' },
+    user: { name: 'Fatima Zafar', avatar: '/Avatar (1).png' },
     course: '3rd semester',
     courseFee: 10000,
     installment: '#Full Fee',
@@ -46,7 +46,6 @@ const initialExampleData = [
   },
 ];
 
-// Utility Function to Calculate Totals
 const calculateTotals = (data) => {
   const totalAmount = data.reduce((sum, item) => sum + item.courseFee, 0);
   const totalPaid = data.reduce((sum, item) => sum + item.paid, 0);
@@ -54,15 +53,12 @@ const calculateTotals = (data) => {
   return { totalAmount, totalPaid, totalDue };
 };
 
-// Function to format Taka amounts
 const formatTk = (amount) => `Tk. ${amount.toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
-
-// --- 2. Main React Component ---
 
 const FeePaymentStatusTable = ({ initialData = initialExampleData }) => {
 
   const [data, setData] = useState(initialData);
-  const [isLoading, setIsLoading] = useState(false); // Add loading state
+  const [isLoading, setIsLoading] = useState(false);
 
 
   const { totalAmount, totalPaid, totalDue } = calculateTotals(data);
@@ -78,7 +74,6 @@ const FeePaymentStatusTable = ({ initialData = initialExampleData }) => {
       {/* --- Header Section --- */}
       <div className="flex justify-between items-center mb-4 border-b pb-4">
         <div className="flex space-x-2 text-sm">
-          {/* Mock filters based on the image */}
           <select className="border rounded-md px-2 py-1 text-gray-600">
             <option>Status | All</option>
           </select>
@@ -125,7 +120,6 @@ const FeePaymentStatusTable = ({ initialData = initialExampleData }) => {
           </thead>
           {/* Table Body */}
           <tbody className="bg-white divide-y divide-gray-200">
-            {/* FIX: The 'data.map' call is now safe because 'data' is guaranteed to be an array */}
             {data.map((item) => (
               <tr key={item.id} className="hover:bg-gray-50">
                 <td className="px-6 py-4 whitespace-nowrap">

@@ -9,7 +9,7 @@ const TopNavbar = () => {
   const [hasNewNotifications, setHasNewNotifications] = useState(true);
 
 
-  const userProfileImage = 'https://via.placeholder.com/150/f00000/ffffff?text=RM';
+  const userProfileImage = '/Avatar (1).png';
   const userName = 'Richardo Mathew';
 
   return (

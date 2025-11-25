@@ -1,25 +1,21 @@
 import React, { useState } from 'react';
 
-// Define options for the dropdowns
 const courseOptions = ['Academic', 'Professional', 'Certification'];
 const semesterOptions = ['1st Semester', '2nd Semester', '3rd Semester', '4th Semester'];
 const installmentOptions = ['Full Fee', '#First installment', '#Second installment'];
 
 const PaymentForm = () => {
-  // State to manage form data
   const [formData, setFormData] = useState({
     name: '',
     userId: '',
     course: courseOptions[0],
     semester: '',
     installment: '',
-    amount: '5000', // Default amount based on image
+    amount: '5000', 
   });
 
-  // State for form submission status or messages (optional but good practice)
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevData => ({
@@ -35,16 +31,13 @@ const PaymentForm = () => {
     
     console.log('Payment Data Submitted:', formData);
     
-    // Simulate API call delay
     setTimeout(() => {
       alert(`Submitting Payment of Tk. ${formData.amount} for ${formData.name}`);
       setIsSubmitting(false);
-      // You would typically call an API here: 
-      // api.submitPayment(formData).then(res => handleSuccess()).catch(err => handleError());
     }, 1000);
   };
 
-  // Handle form reset
+
   const handleReset = () => {
     setFormData({
       name: '',
@@ -57,7 +50,6 @@ const PaymentForm = () => {
     console.log('Form Reset');
   };
 
-  // Component for a single form field (Input or Select)
   const FormField = ({ label, name, children, type = 'text', placeholder, value, readOnly = false }) => (
     <div className="mb-4">
       <label className="block text-lg font-medium text-gray-800 mb-1" htmlFor={name}>
@@ -84,7 +76,6 @@ const PaymentForm = () => {
       {/* --- Header --- */}
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold text-gray-900">Payment</h2>
-        {/* Mock icon for history/database */}
         <div className="text-gray-500">
             <svg className="w-6 h-6 inline-block mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2z"/>
@@ -157,10 +148,8 @@ const PaymentForm = () => {
           </select>
         </FormField>
 
-        {/* Amount Input (Read-only for demonstration, but dynamic in a real app) */}
         <FormField label="Amount" name="amount" readOnly={true}>
             <div className="relative">
-                {/* Use readOnly input to mimic the "Tk. 5,000" display */}
                 <input
                     className="w-full p-3 border rounded-lg bg-gray-100 text-gray-800 font-semibold focus:outline-none transition-shadow pr-10"
                     type="text"

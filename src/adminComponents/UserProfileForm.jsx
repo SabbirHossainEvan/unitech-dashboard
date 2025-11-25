@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 
-// --- Initial Data (Replace with data fetched from your API) ---
 const initialUserData = {
   name: 'Richardo Mathew',
   email: 'mail@gmail.com',
-  oldPassword: '', // Will be entered by the user
-  newPassword: '', // Will be entered by the user
+  oldPassword: '', 
+  newPassword: '', 
   role: 'Admin',
-  avatarUrl: '/path/to/richardo-avatar.png', // Replace with actual URL
+  avatarUrl: '/Avatar (1).png'
 };
 
 const UserProfileForm = () => {
-  // State for user details and password fields
+
   const [formData, setFormData] = useState(initialUserData);
   const [isEditing, setIsEditing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
 
-  // Handle changes for all input fields
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevData => ({
@@ -25,18 +24,18 @@ const UserProfileForm = () => {
     }));
   };
 
-  // Handle the Save Changes submission
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSaving(true);
 
-    // Prepare data to send to the API
+
     const updatePayload = {
       name: formData.name,
       email: formData.email,
     };
     
-    // If passwords were entered, include them (e.g., for validation/update)
+   
     if (formData.oldPassword && formData.newPassword) {
       updatePayload.oldPassword = formData.oldPassword;
       updatePayload.newPassword = formData.newPassword;
@@ -44,20 +43,19 @@ const UserProfileForm = () => {
 
     console.log('Saving changes:', updatePayload);
 
-    // Simulate API call delay
     setTimeout(() => {
       alert(`Profile updated for ${formData.name}!`);
       setIsSaving(false);
-      setIsEditing(false); // Lock the personal details fields after saving
+      setIsEditing(false); 
       setFormData(prevData => ({
           ...prevData,
           oldPassword: '',
-          newPassword: '' // Clear password fields after attempt
+          newPassword: '' 
       }));
     }, 1500);
   };
 
-  // Reusable component for form fields
+
   const FormField = ({ label, name, type = 'text', value, placeholder, readOnly = false }) => (
     <div className="mb-4">
       <label className="block text-md font-medium text-gray-700 mb-1" htmlFor={name}>
@@ -123,7 +121,7 @@ const UserProfileForm = () => {
           name="name"
           value={formData.name}
           placeholder="Enter your name"
-          readOnly={!isEditing} // Editable only if isEditing is true
+          readOnly={!isEditing}
         />
 
         {/* Email Input */}
@@ -133,7 +131,7 @@ const UserProfileForm = () => {
           type="email"
           value={formData.email}
           placeholder="Enter your email"
-          readOnly={!isEditing} // Editable only if isEditing is true
+          readOnly={!isEditing} 
         />
 
         {/* --- Update Password Section --- */}
@@ -160,7 +158,7 @@ const UserProfileForm = () => {
         {/* --- Save Changes Button --- */}
         <button
           type="submit"
-          className="w-full py-3 mt-6 text-white font-semibold bg-orange-500 hover:bg-orange-600 rounded-lg shadow-md transition-colors disabled:opacity-50"
+          className="w-full py-3 mt-6 text-white font-semibold bg-[#F89521] hover:bg-orange-600 rounded-lg shadow-md transition-colors disabled:opacity-50"
           disabled={isSaving}
         >
           {isSaving ? 'Saving...' : 'Save Changes'}

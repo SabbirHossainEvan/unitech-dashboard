@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// Define options for the Role dropdown
+
 const roleOptions = ['Admin', 'Editor', 'Viewer', 'Instructor', 'Student'];
 
 const CreateAccountForm = () => {
@@ -8,10 +8,10 @@ const CreateAccountForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     idNo: '',
-    role: '', // Initialize as empty for 'Select a role' placeholder
+    role: '', 
     email: '',
-    oldPassword: '', // Renamed from 'oldPassword' to 'password' for creation
-    newPassword: '', // Renamed from 'newPassword' to 'confirmPassword'
+    oldPassword: '', 
+    newPassword: '', 
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -60,7 +60,7 @@ const CreateAccountForm = () => {
       <label className="block text-md font-medium text-gray-700 mb-1" htmlFor={name}>
         {label} {isOptional && <span className="text-gray-500 text-sm">(optional)</span>}
       </label>
-      {children || ( // Render children (e.g., select) if provided, otherwise render input
+      {children || ( 
         <input
           className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-shadow"
           type={type}
@@ -101,8 +101,7 @@ const CreateAccountForm = () => {
           label="ID No."
           name="idNo"
           value={formData.idNo}
-          placeholder="Richardo Mathew" // Placeholder from image seems to be a name, not ID
-          // Changed placeholder to something more ID-like if needed: placeholder="e.g., 12345678"
+          placeholder="Richardo Mathew" 
         />
 
         {/* Role Dropdown */}
@@ -128,31 +127,28 @@ const CreateAccountForm = () => {
           type="email"
           value={formData.email}
           placeholder="mail@gmail.com"
-          isOptional={true} // Mark as optional as per image
+          isOptional={true} 
         />
 
         {/* --- Create Password Section --- */}
-        {/* Renamed to reflect account creation */}
         <h3 className="text-lg font-bold text-gray-800 mb-3 mt-6">Create Password</h3>
         
         {/* Password Input */}
         <FormField
-          label="Password" // Changed from 'Old password'
-          name="oldPassword" // Reusing name, but logically this is the initial password
+          label="Password" 
+          name="oldPassword"
           type="password"
           value={formData.oldPassword}
           placeholder="********"
-          // Required validation could be added here
         />
 
         {/* Confirm Password Input */}
         <FormField
-          label="Confirm password" // Changed from 'New password'
-          name="newPassword" // Reusing name, but logically this is the confirmation
+          label="Confirm password" 
+          name="newPassword" 
           type="password"
           value={formData.newPassword}
           placeholder="********"
-          // Required validation could be added here
         />
 
         {/* --- Submit Button --- */}

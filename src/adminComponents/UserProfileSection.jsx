@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router';
 
-// Mock data for a single user (you can pass this as props)
 const mockUser = {
     id: '1',
     name: 'Sarah Khan',
     semester: '1st Semester',
-    avatarUrl: 'https://i.pravatar.cc/150?img=1', // Example avatar
+    avatarUrl: '/Avatar (1).png', 
     personalDetails: {
         studentName: 'Sarah Khan',
         fatherName: 'Mr Saif Khan',
@@ -27,15 +26,14 @@ const mockUser = {
         },
         {
             semester: '1st semester',
-            subjects: ['Subject 1'], // Simplified for second installment example
-            courseFee: '12,000', // This might be total fee, adjust as needed
+            subjects: ['Subject 1'], 
+            courseFee: '12,000', 
             installment: '#Second installment',
             paid: '6,000',
             due: '6,000',
         },
     ],
     attendance: {
-        // You'd typically have more detailed attendance data here
         totalClasses: 50,
         attendedClasses: 45,
         percentage: '90%',
@@ -52,7 +50,6 @@ const mockUser = {
 };
 
 
-// Collapsible Section Component
 const CollapsibleSection = ({ title, children, defaultOpen = false }) => {
     const [isOpen, setIsOpen] = useState(defaultOpen);
 
@@ -83,9 +80,7 @@ const CollapsibleSection = ({ title, children, defaultOpen = false }) => {
 };
 
 
-// Main User Profile Section Component
 const UserProfileSection = ({ user = mockUser }) => {
-    // State for the payment form
     const [paymentForm, setPaymentForm] = useState({
         name: '',
         userId: '',
@@ -103,7 +98,6 @@ const UserProfileSection = ({ user = mockUser }) => {
     const handleSubmitPayment = (e) => {
         e.preventDefault();
         console.log('Payment Submitted:', paymentForm);
-        // Here you would typically send data to an API
         alert('Payment submitted (Check console for data)!');
     };
 
@@ -118,12 +112,12 @@ const UserProfileSection = ({ user = mockUser }) => {
         });
     };
 
-    // Calculate total course fee, paid, and due
+
     const totalCourseFee = user.paymentHistory.reduce((sum, item) => sum + parseFloat(item.courseFee.replace(/,/g, '')), 0);
     const totalPaid = user.paymentHistory.reduce((sum, item) => sum + parseFloat(item.paid.replace(/,/g, '')), 0);
     const totalDue = user.paymentHistory.reduce((sum, item) => sum + parseFloat(item.due.replace(/,/g, '')), 0);
 
-    // Calculate total marks for results
+
     const totalResultsMarks = user.results.reduce((sum, item) => sum + item.totalMarks, 0);
     const totalObtainedMarks = user.results.reduce((sum, item) => sum + item.obtainedMarks, 0);
 
@@ -208,7 +202,6 @@ const UserProfileSection = ({ user = mockUser }) => {
                                                 Tk. {payment.due}
                                             </td>
                                         </tr>
-                                        {/* Display subjects for the first installment row */}
                                         {payment.subjects && payment.subjects.length > 0 && payment.installment === '#First installment' && (
                                             <tr>
                                                 <td colSpan="5" className="px-4 py-2 text-sm text-gray-600">
@@ -325,7 +318,7 @@ const UserProfileSection = ({ user = mockUser }) => {
                                 className="w-full border border-gray-300 rounded-md py-2 px-3 text-sm focus:ring-orange-400 focus:border-[#F89521]"
                                 value={`Tk. ${paymentForm.amount}`}
                                 onChange={handlePaymentFormChange}
-                                readOnly // Amount is usually pre-filled or calculated
+                                readOnly 
                             />
                         </div>
                         <div className="md:col-span-2 lg:col-span-3 flex space-x-3 mt-4">
@@ -359,7 +352,6 @@ const UserProfileSection = ({ user = mockUser }) => {
                     <li>Attended Classes: {user.attendance.attendedClasses}</li>
                     <li>Attendance Percentage: {user.attendance.percentage}</li>
                 </ul>
-                {/* You could add a table for detailed attendance history here */}
                 <p className="text-sm text-gray-500 mt-4">
                     (Detailed attendance history table can be added here, similar to payment history.)
                 </p>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Dot } from 'lucide-react';
 
-// Define the data for the slides
 const slidesData = [
   {
     id: 1,
@@ -55,26 +54,23 @@ const SlideContent = ({ slide, isActive }) => (
   </div>
 );
 
-// Main App component to host the slider
 const App = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = slidesData.length;
-  const autoplayInterval = 5000; // 5 seconds
+  const autoplayInterval = 5000; 
 
-  // Function to move to the next slide
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
   }, [totalSlides]);
 
-  // Function to move to the previous slide
   const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
   }, [totalSlides]);
 
-  // Autoplay effect
+
   useEffect(() => {
     const timer = setInterval(nextSlide, autoplayInterval);
-    return () => clearInterval(timer); // Cleanup on unmount
+    return () => clearInterval(timer); 
   }, [nextSlide, autoplayInterval]);
 
   const currentData = slidesData[currentSlide];
@@ -87,14 +83,9 @@ const App = () => {
         transition-colors duration-500 ease-in-out
         ${currentData.backgroundColor}
       `}>
-        {/*
-          SLIDES CONTAINER:
-          Uses Tailwind's grid/flex layout to place content and image side-by-side.
-        */}
+
         <div className="grid grid-cols-1 md:grid-cols-12 h-full">
-          {/* Left Content Area (Col 1-7) */}
           <div className="md:col-span-7 relative z-10 h-full">
-            {/* Map over slides to render content, using absolute positioning for dynamic transitions */}
             <div className="relative h-full">
               {slidesData.map((slide, index) => (
                 <div
@@ -120,10 +111,7 @@ const App = () => {
             </button>
           </div>
 
-
-          {/* Right Image Area (Col 7-12) */}
           <div className="md:col-span-5 relative overflow-hidden h-full hidden md:block">
-            {/* Image Slider: TranslateX to slide images */}
             <div
               className="flex h-full transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -134,7 +122,6 @@ const App = () => {
                     src={slide.imageUrl}
                     alt={slide.alt}
                     className="w-full h-full object-cover transition-transform duration-700 ease-in-out scale-105 hover:scale-100"
-                    // Fallback in case placeholder fails
                     onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/1000x600/cccccc/333333?text=Image+Unavailable"; }}
                   />
                 </div>

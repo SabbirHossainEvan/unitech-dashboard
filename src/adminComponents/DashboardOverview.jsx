@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 const CountUp = ({ end, duration = 2.75, formattingFn, label }) => {
-    // State to hold the current displayed value during the animation
     const [count, setCount] = useState(0); 
-    const start = 0; // Animation always starts from 0
+    const start = 0; 
 
     useEffect(() => {
         let startTime;
@@ -13,31 +12,24 @@ const CountUp = ({ end, duration = 2.75, formattingFn, label }) => {
             if (!startTime) startTime = timestamp;
             const elapsed = timestamp - startTime;
             
-            // Calculate progress (0 to 1)
             const progress = Math.min(elapsed / (duration * 1000), 1);
             
             const currentValue = start + (end - start) * progress;
-            
-            // Update state with the new value
             setCount(Math.floor(currentValue));
 
             if (progress < 1) {
-                // Continue the animation
                 animationFrame = requestAnimationFrame(animate);
             } else {
-                // Ensure the final, exact target value is displayed
+
                 setCount(end);
             }
         };
 
-        // Start the animation
         animationFrame = requestAnimationFrame(animate);
 
-        // Cleanup function to stop the animation if the component unmounts
         return () => cancelAnimationFrame(animationFrame);
-    }, [end, duration]); // Reruns if the target 'end' value changes
+    }, [end, duration]); 
 
-    // Formatting is applied to the continuously updating 'count' state
     const displayValue = formattingFn(count, label);
 
     return <span className="block">{displayValue}</span>;
@@ -45,19 +37,17 @@ const CountUp = ({ end, duration = 2.75, formattingFn, label }) => {
 
 
 const MetricCard = ({ label, rawValue, change, isPositive, bgColor }) => {
-  // Determine text color and icon based on the change
   const changeColor = isPositive ? 'text-green-600' : 'text-red-600';
-  const trendIcon = isPositive ? '▲' : '▼'; // Unicode arrow icons
+  const trendIcon = isPositive ? '▲' : '▼'; 
 
-  // Custom formatting logic applied to the animated value
+
   const formatValue = (value, currentLabel) => {
     if (currentLabel === 'Impressions' || currentLabel === 'Visitors' || currentLabel === 'Total Users' || currentLabel === 'Engaged') {
-      // Convert to 'k' format and round to one decimal for numbers >= 1000
       if (value >= 1000) {
           return (value / 1000).toFixed(1) + 'k';
       }
     }
-    // For smaller numbers (like Enrolled) or numbers less than 1000, return the integer
+
     return value.toLocaleString('en-US', { maximumFractionDigits: 0 });
   };
 
@@ -66,17 +56,16 @@ const MetricCard = ({ label, rawValue, change, isPositive, bgColor }) => {
       
       <p className="text-gray-600 text-sm mb-2 font-medium">{label}</p>
       
-      {/* Metric Value - Now animated */}
+
       <div className="text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
         <CountUp 
           end={rawValue} 
-          duration={2.0} // Using 2.0s for a slightly faster animation
+          duration={2.0} 
           formattingFn={formatValue}
           label={label}
         />
       </div>
       
-      {/* Percentage Change and Icon */}
       <div className={`flex items-center text-sm font-semibold ${changeColor}`}>
         {change}
         <span className={`ml-1 text-base ${changeColor}`}>{trendIcon}</span>
@@ -91,7 +80,7 @@ const metricsData = [
     id: 1, 
     label: 'Impressions', 
     value: '7.9k', 
-    rawValue: 7900, // Target for CountUp
+    rawValue: 7900, 
     change: '+11.02%', 
     isPositive: true, 
     bgColor: 'bg-[#35BD9526]' 
@@ -137,7 +126,7 @@ const metricsData = [
 const DashboardOverview = () => {
   const [selectedPeriod, setSelectedPeriod] = useState('monthly');
 
-  // Define responsive grid layout
+
   const gridClasses = 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6';
 
   return (

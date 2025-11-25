@@ -1,6 +1,5 @@
 import React from 'react'
 
-// Define mock user data for display and stability
 const mockUser2 = {
     id: '1',
     name: 'Sarah Khan',
@@ -11,15 +10,12 @@ const mockUser2 = {
     avatarUrl: 'https://i.pravatar.cc/150?img=1',
 };
 
-// Creates a list of 20 mock users
 const mockUsers2 = Array(20).fill(mockUser2).map((user, index) => ({
     ...user,
     id: String(index + 1),
     avatarUrl: `https://i.pravatar.cc/150?img=${1 + (index % 10)}`,
 }));
 
-
-// FIX: Set mockUsers2 as the default for 'users' to ensure data always loads if none is passed.
 const UserAccountList = ({ users = mockUsers2, totalUsers = users.length }) => { 
     return (
         <div className="bg-white rounded-lg border border-gray-200">
@@ -66,7 +62,6 @@ const UserAccountList = ({ users = mockUsers2, totalUsers = users.length }) => {
                     <table className="min-w-full divide-y divide-gray-200">
 
                         <thead className="bg-gray-50">
-                            {/* FIX: Removed conflicting flex/w-full classes */}
                             <tr> 
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     User
@@ -83,16 +78,12 @@ const UserAccountList = ({ users = mockUsers2, totalUsers = users.length }) => {
                             </tr>
                         </thead>
 
-                        {/* FIX: Removed 'block' from tbody and uses standard table flow */}
                         <tbody className="bg-white divide-y divide-gray-200"> 
                             {users.map((user) => (
                                 <tr key={user.id} className="hover:bg-gray-50"> 
                                     
-                                    {/* Column 1: User (Name and Avatar) */}
                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        {/* FIX: Uses <span> instead of <Link> for stability */}
                                         <span className="flex items-center cursor-pointer">
-                                            {/* User Avatar */}
                                             <img
                                                 className="h-7 w-7 rounded-full mr-3 object-cover"
                                                 src={user.avatarUrl}
@@ -104,19 +95,17 @@ const UserAccountList = ({ users = mockUsers2, totalUsers = users.length }) => {
                                         </span>
                                     </td>
                                     
-                                    {/* Column 2: User ID */}
                                     <td className='px-6 py-4 whitespace-nowrap'> 
                                         <span className="text-sm text-gray-500 font-normal">
                                             {user.userId}
                                         </span>
                                     </td>
 
-                                    {/* Column 3: Due */}
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                         {user.due}
                                     </td>
 
-                                    {/* Column 4: Status */}
+
                                     <td className='px-6 py-4 whitespace-nowrap'> 
                                         <span className={`text-sm font-semibold ${user.status === 'BLOCKED' ? 'text-red-600' : 'text-green-600'}`}>
                                             {user.status}

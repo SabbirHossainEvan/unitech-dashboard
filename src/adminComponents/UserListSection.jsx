@@ -13,7 +13,6 @@ const mockUser = {
     avatarUrl: 'https://i.pravatar.cc/150?img=1',
 };
 
-// Creates a list of 20 mock users
 const mockUsers = Array(20).fill(mockUser).map((user, index) => ({
     ...user,
     id: String(index + 1),
@@ -21,7 +20,6 @@ const mockUsers = Array(20).fill(mockUser).map((user, index) => ({
 }));
 
 
-// --- REACT COMPONENT ---
 const UserListSection = ({ users, totalUsers }) => {
     return (
         <div className="bg-white rounded-lg  border border-gray-200">
@@ -88,11 +86,11 @@ const UserListSection = ({ users, totalUsers }) => {
                         </thead>
 
                         {/* --- Table Body (Scrollable) --- */}
-                        <tbody className="bg-white divide-gray-200 block">
+                        <tbody className="bg-white divide-y divide-gray-200">
                             {users.map((user) => (
-                                <tr key={user.id} className="w-full justify-between flex">
+                                <tr key={user.id} className="w-full justify-between flex hover:bg-gray-50">
                                     <Link to={"/admin/user-details/user-profile"}>
-                                        <td className=" whitespace-nowrap text-sm font-medium text-gray-900  flex items-center">
+                                        <td className=" whitespace-nowrap text-md font-medium text-gray-900  flex items-center px-6 py-4">
                                             {/* User Avatar */}
                                             <img
                                                 className="h-7 w-7 rounded-full mr-3 object-cover"
@@ -106,19 +104,19 @@ const UserListSection = ({ users, totalUsers }) => {
                                             </div>
                                         </td>
                                     </Link>
-                                    <td className=''>
+                                    <td className='px-6 py-4 -mr-1'>
                                         <span className="text-xs text-gray-500 font-normal">
                                             {user.userId}
                                         </span>
                                     </td>
 
-                                    <td >
-                                        <div className="px-6 py-2 whitespace-nowrap text-sm text-gray-500">
+                                    <td className='px-6 py-4'>
+                                        <div className=" whitespace-nowrap text-sm text-gray-500">
                                             {user.course}
                                         </div>
                                     </td>
 
-                                    <td className='mr-6'>
+                                    <td className='px-6 py-4'>
                                         <span className="text-green-600">
                                             {user.status}
                                         </span>
@@ -133,5 +131,4 @@ const UserListSection = ({ users, totalUsers }) => {
     );
 };
 
-// Use named exports
 export { UserListSection, mockUsers };

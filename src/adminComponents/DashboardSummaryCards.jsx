@@ -5,16 +5,15 @@ const CircularProgressCard = ({
   percentage,
   title,
   subtitle,
-  progressColor, // e.g., 'text-red-500', 'text-green-500', 'text-orange-500'
+  progressColor, 
   trackColor = 'text-gray-200',
   textColor = 'text-gray-800',
-  animationDuration = 1000, // in milliseconds
+  animationDuration = 1000, 
 }) => {
   const [animatedPercentage, setAnimatedPercentage] = useState(0);
-  const circumference = 2 * Math.PI * 40; // 40 is the radius of the circle
+  const circumference = 2 * Math.PI * 40; 
 
   useEffect(() => {
-    // Animate the percentage from 0 to the target percentage
     let startTime;
     const animate = (currentTime) => {
       if (!startTime) startTime = currentTime;
@@ -28,7 +27,6 @@ const CircularProgressCard = ({
     requestAnimationFrame(animate);
   }, [percentage, animationDuration]);
 
-  // Calculate the stroke-dashoffset for the SVG circle
   const strokeDashoffset = circumference - (animatedPercentage / 100) * circumference;
 
   return (
@@ -77,7 +75,6 @@ const CircularProgressCard = ({
 
 
 const DashboardSummaryCards = () => {
-  // Example dynamic data (you would fetch this from an API)
   const attendanceData = { percentage: 40, message: 'Very poor average attendance' };
   const paymentData = { percentage: 100, message: 'No due remains' };
   const resultData = { percentage: 60, message: 'Average result' };
@@ -114,7 +111,7 @@ const DashboardSummaryCards = () => {
       <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center">
         <CircularProgressCard
           percentage={resultData.percentage}
-          title="Result" // Changed from 'Attendance' to 'Result' based on your image
+          title="Result" 
           progressColor="text-orange-500"
           textColor="text-gray-800"
         />
