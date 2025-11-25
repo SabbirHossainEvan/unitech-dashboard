@@ -1,7 +1,10 @@
 import React from 'react'
+import ExitConfirmationModal from '../adminComponents/ExitConfirmationModal'
 
 export default function Exit() {
   return (
-    <div>Exit</div>
+    <div>
+        <ExitConfirmationModal></ExitConfirmationModal>
+    </div>
   )
 }
