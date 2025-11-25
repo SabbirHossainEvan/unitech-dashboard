@@ -9,6 +9,7 @@ import CourseDetailsCard from "../adminComponents/CourseDetailsCard";
 import UserDetails from "../adminPages/UserDetails";
 import UserProfile from "../adminComponents/UserProfile";
 import ManageAccounts from "../adminPages/ManageAccounts";
+import PaymentInfo from "../adminPages/PaymentInfo";
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
             {
                 path: "/admin/manage-accounts",
                 element: <ManageAccounts></ManageAccounts>
+            },
+            {
+                path: "/admin/payment-info",
+                element: <PaymentInfo></PaymentInfo>
             }
         ]
     },
