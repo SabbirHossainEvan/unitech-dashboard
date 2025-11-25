@@ -82,7 +82,7 @@ const UserProfileForm = () => {
 
 
   return (
-    <div className="w-full max-w-lg mx-auto bg-white shadow-xl rounded-xl p-6 border border-gray-100">
+    <div className="w-full  mx-auto bg-white  rounded-xl p-6 border border-gray-100">
       
       {/* --- Header & Profile Info --- */}
       <div className="flex justify-between items-start mb-6 border-b pb-4">
