@@ -1,0 +1,42 @@
+{
+"page_config": {
+"title": "Attendance",
+"subtitle": "Track student attendance records.",
+"items_per_page": 10
+},
+"filters": {
+"months": [
+{ "value": "Jan, 2024", "label": "Jan, 2024", "totalDays": 31 },
+{ "value": "Feb, 2024", "label": "Feb, 2024", "totalDays": 29 },
+{ "value": "Mar, 2024", "label": "Mar, 2024", "totalDays": 31 },
+{ "value": "Apr, 2024", "label": "Apr, 2024", "totalDays": 30 },
+{ "value": "May, 2024", "label": "May, 2024", "totalDays": 31 },
+{ "value": "Jun, 2024", "label": "Jun, 2024", "totalDays": 30 },
+{ "value": "Jul, 2024", "label": "Jul, 2024", "totalDays": 31 },
+{ "value": "Aug, 2024", "label": "Aug, 2024", "totalDays": 31 },
+{ "value": "Sep, 2024", "label": "Sep, 2024", "totalDays": 30 },
+{ "value": "Oct, 2024", "label": "Oct, 2024", "totalDays": 31 },
+{ "value": "Nov, 2024", "label": "Nov, 2024", "totalDays": 30 },
+{ "value": "Dec, 2024", "label": "Dec, 2024", "totalDays": 31 }
+],
+"academics": [
+{ "value": "Academic Year 2023-2024", "label": "Academic Year 2023-2024" },
+{ "value": "Academic Year 2024-2025", "label": "Academic Year 2024-2025" }
+],
+"semesters": [
+{ "value": "1st semester", "label": "1st semester" },
+{ "value": "2nd semester", "label": "2nd semester" }
+],
+"subjects": [
+{ "value": "All Subjects", "label": "All Subjects" },
+{ "value": "Mathematics", "label": "Mathematics" },
+{ "value": "Computer Science", "label": "Computer Science" }
+],
+"attendance_types": [
+{ "value": "all", "label": "All" },
+{ "value": "present", "label": "Present" },
+{ "value": "absent", "label": "Absent" },
+{ "value": "late", "label": "Late" }
+]
+}
+}

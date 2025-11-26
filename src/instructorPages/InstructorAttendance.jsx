@@ -1,7 +1,10 @@
 import React from 'react'
+import AttendancePage from '../instructorComponent/AttendancePage'
 
 export default function InstructorAttendance() {
   return (
-    <div>InstructorAttendance</div>
+    <div>
+        <AttendancePage></AttendancePage>
+    </div>
   )
 }
