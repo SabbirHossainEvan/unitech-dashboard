@@ -13,6 +13,8 @@ import PaymentInfo from "../adminPages/PaymentInfo";
 import Annoucement from "../adminPages/Annoucement";
 import Settings from "../adminPages/Settings";
 import Exit from "../adminPages/Exit";
+import InstructorProfile from "../instructorPages/InstructorProfile";
+import InstructorAttendance from "../instructorPages/InstructorAttendance";
 
 const router = createBrowserRouter([
     {
@@ -67,7 +69,17 @@ const router = createBrowserRouter([
     },
     {
         path: "/instructor",
-        element: <InstructorDashboard></InstructorDashboard>
+        element: <InstructorDashboard></InstructorDashboard>,
+        children: [
+            {
+                index: true,
+                element: <InstructorProfile></InstructorProfile>
+            },
+            {
+                path: "attendance",
+                element: <InstructorAttendance></InstructorAttendance>
+            }
+        ]
     },
     {
         path: "/student",
