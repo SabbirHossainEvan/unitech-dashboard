@@ -1,16 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Trash2, Edit, Loader2, X } from 'lucide-react';
 
-// ----------------------------------------------------------------------
-// --- Simplified Date Utilities (Replacing date-fns) ---
-// ----------------------------------------------------------------------
 const DAYS_OF_WEEK = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const SHORT_DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-// Helper to convert ISO string to Date object
+
 const parseISOString = (isoString) => new Date(isoString);
 
-// Helper to get day index (0=Sunday, 6=Saturday)
 const getDayOfWeek = (date) => date.getDay();
 
 // Simplified format function based on needs (yyyy-MM-dd, EEEE, EE, d)
@@ -29,9 +25,7 @@ const simpleFormat = (date, formatStr) => {
     return date.toISOString().split('T')[0]; // Default ISO date
 };
 
-// ----------------------------------------------------------------------
-// 🚨 EMBEDDED CONFIGURATION DATA 🚨
-// ----------------------------------------------------------------------
+
 const attendanceConfig = {
   "page_config": {
     "title": "Attendance",
@@ -74,10 +68,7 @@ const attendanceConfig = {
     ]
   }
 };
-// ----------------------------------------------------------------------
 
-
-// --- Utility Functions for Dynamic Data Generation (kept local for self-contained file) ---
 
 const studentNames = [
   "Olivia Rhye", "Phoenix Baker", "Lana Steiner", "Demi Wilkinson", "Candice Wu",
@@ -85,17 +76,17 @@ const studentNames = [
   "Molly Sanders", "Ariel Zhu", "Babe Roy", "Cloe D'souza", "Dillon Smith"
 ];
 
-// Helper to generate a consistent attendance status based on ID and date
+
 const getAttendanceStatus = (studentId, day) => {
-    // Determine status pseudo-randomly for demonstration
+
     const seed = studentId * day.getDate() + day.getMonth() + day.getFullYear();
     const statusNumber = seed % 10;
     
-    if (statusNumber < 7) { // 70% Present
+    if (statusNumber < 7) { 
         return "Present";
-    } else if (statusNumber < 9) { // 20% Absent
+    } else if (statusNumber < 9) { 
         return "Absent";
-    } else { // 10% Late
+    } else { 
         return "Late";
     }
 };
@@ -111,10 +102,10 @@ const generateAttendanceData = (selectedMonthYear, totalDays, filters) => {
     for (let i = 0; i < totalDays; i++) {
         const date = new Date(firstDayOfMonth);
         date.setDate(date.getDate() + i);
-        const dayOfWeek = getDayOfWeek(date); // Use new utility: 0 = Sunday, 6 = Saturday
+        const dayOfWeek = getDayOfWeek(date); 
         days.push({
-            date: simpleFormat(date, 'yyyy-MM-dd'), // Use new utility
-            dayName: simpleFormat(date, 'EEEE'),   // Use new utility
+            date: simpleFormat(date, 'yyyy-MM-dd'), 
+            dayName: simpleFormat(date, 'EEEE'),   
             isWeekend: dayOfWeek === 0 || dayOfWeek === 6
         });
     }
@@ -122,14 +113,14 @@ const generateAttendanceData = (selectedMonthYear, totalDays, filters) => {
     const attendanceRecords = studentNames.map((name, index) => {
         const id = index + 1001;
         const initials = name.split(' ').map(n => n[0]).join('');
-        const username = name.toLowerCase().replace(/\s/g, '').substring(0, 8); // Shortened username
+        const username = name.toLowerCase().replace(/\s/g, '').substring(0, 8); 
 
         let classesAttended = 0;
         let totalClasses = 0;
         const dailyAttendance = {};
 
         days.forEach(day => {
-            if (!day.isWeekend) { // Only count weekdays as classes
+            if (!day.isWeekend) { 
                 totalClasses++;
                 const status = getAttendanceStatus(id, new Date(day.date));
                 dailyAttendance[day.date] = status;
@@ -183,7 +174,6 @@ const Dropdown = ({ options, selectedValue, onChange, title }) => (
 const DeleteConfirmationModal = ({ isOpen, onClose, onConfirm, studentName }) => {
     if (!isOpen) return null;
 
-    // CHANGED: bg-gray-900 bg-opacity-50 to bg-indigo-900 bg-opacity-80
     return (
         <div className="fixed inset-0 bg-transparent bg-opacity-600 flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-xl shadow-2xl w-full max-w-sm p-6 transform transition-all duration-300 scale-100">
@@ -246,7 +236,7 @@ const EditModal = ({ isOpen, onClose, onUpdate, student, daysInMonth }) => {
 
     // Handle save button click
     const handleSave = () => {
-        // Recalculate total classes and attendance based on daily changes
+
         let newClassesAttended = 0;
         let newTotalClasses = 0;
 
@@ -268,7 +258,7 @@ const EditModal = ({ isOpen, onClose, onUpdate, student, daysInMonth }) => {
         onClose();
     };
 
-    // CHANGED: bg-gray-900 bg-opacity-60 to bg-indigo-900 bg-opacity-80
+
     return (
         <div className="fixed inset-0 bg-transparent bg-opacity-130 flex items-center justify-center z-50 p-4 overflow-y-auto">
             <div className="bg-white rounded-xl shadow-2xl w-full max-w-2xl transform transition-all duration-300">
@@ -369,7 +359,7 @@ const EditModal = ({ isOpen, onClose, onUpdate, student, daysInMonth }) => {
 // --- Main Attendance Page Component ---
 
 const AttendancePage = () => {
-  // Directly use the embedded config
+
   const { filters, page_config } = attendanceConfig;
   
   // Initialize filter states
