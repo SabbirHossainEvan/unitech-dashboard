@@ -163,7 +163,7 @@ const PaymentForm = () => {
         {/* --- Buttons --- */}
         <button
           type="submit"
-          className="w-full py-3 mt-4 text-white font-semibold bg-orange-500 hover:bg-orange-600 rounded-lg shadow-md transition-colors disabled:opacity-50"
+          className="w-full py-3 mt-4 text-white font-semibold bg-[#F89521] hover:bg-orange-600 rounded-lg shadow-md transition-colors disabled:opacity-50"
           disabled={isSubmitting}
         >
           {isSubmitting ? 'Processing...' : 'Submit Payment'}
