@@ -23,8 +23,8 @@ const menuItems = [
   { name: 'Attendance', icon: FilePenLine, link: '/attendance' },
 
   { name: 'Result', icon: FileText, link: '/result' },
-  { name: 'Announcement', icon: Megaphone, link: '/admin/announcement' },
-  { name: 'Exit', icon: LogOut, link: '/admin/exit' },
+  { name: 'Announcement', icon: Megaphone, link: '/announcement' },
+  { name: 'Exit', icon: LogOut, link: '/exit' },
 ];
 
 const InstructorSideNavbar = () => { 
