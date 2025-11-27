@@ -186,7 +186,6 @@ const InstructorSideNavbar = () => {
                             <li key={item.name}>
                                 <NavLink
                                     to={item.link}
-                                    // Apply the 'end' prop if it's the Profile route
                                     {...(isExactMatchRequired ? { end: true } : {})}
 
                                     className={({ isActive }) => `
