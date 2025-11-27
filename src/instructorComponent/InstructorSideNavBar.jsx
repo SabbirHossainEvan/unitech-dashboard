@@ -114,7 +114,7 @@
 //   );
 // };
 
-// export default InstructorSideNavbar;
+
 
 import React, { useState } from 'react';
 import adminImage from "../assets/Frame 45 (1).png"
