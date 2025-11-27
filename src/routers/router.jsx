@@ -15,6 +15,8 @@ import Settings from "../adminPages/Settings";
 import Exit from "../adminPages/Exit";
 import InstructorProfile from "../instructorPages/InstructorProfile";
 import InstructorAttendance from "../instructorPages/InstructorAttendance";
+import InsttructorAnnoucement from "../instructorPages/InsttructorAnnoucement";
+import InstructorExit from "../instructorPages/InstructorExit";
 
 const router = createBrowserRouter([
     {
@@ -78,6 +80,14 @@ const router = createBrowserRouter([
             {
                 path: "attendance",
                 element: <InstructorAttendance></InstructorAttendance>
+            },
+            {
+                path: "instructor-attendance",
+                element: <InsttructorAnnoucement></InsttructorAnnoucement>
+            },
+            {
+                path: "instructor-exit",
+                element: <InstructorExit></InstructorExit>
             }
         ]
     },

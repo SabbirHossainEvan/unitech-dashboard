@@ -138,8 +138,8 @@ const menuItems = [
     { name: 'Profile', icon: User, link: '/instructor' }, // Base route
     { name: 'Attendance', icon: FilePenLine, link: '/instructor/attendance' },
     { name: 'Result', icon: FileText, link: '/result' },
-    { name: 'Announcement', icon: Megaphone, link: '/announcement' },
-    { name: 'Exit', icon: LogOut, link: '/exit' },
+    { name: 'Announcement', icon: Megaphone, link: '/instructor/instructor-attendance' },
+    { name: 'Exit', icon: LogOut, link: '/instructor/instructor-exit' },
 ];
 
 const InstructorSideNavbar = () => {
