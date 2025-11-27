@@ -180,9 +180,6 @@ const InstructorSideNavbar = () => {
                     {menuItems.map((item) => {
                         const Icon = item.icon;
 
-                        // 💡 Key Change: Check if the link is a 'base' link that needs exact matching.
-                        // We specifically set 'end: true' for the Profile link to prevent it from 
-                        // matching /instructor/attendance.
                         const isExactMatchRequired = item.link === '/instructor';
 
                         return (
