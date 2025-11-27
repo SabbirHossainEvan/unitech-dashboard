@@ -21,8 +21,8 @@ const menuItems = [
     { name: 'Profile', icon: User, link: '/student' }, // Base route
     { name: 'Attendance', icon: FilePenLine, link: '/attendance' },
     { name: 'Result', icon: FileText, link: '/result' },
-    { name: 'Announcement', icon: Megaphone, link: 'instructor-attendance' },
-    { name: 'Exit', icon: LogOut, link: '/instructor-exit' },
+    { name: 'Announcement', icon: Megaphone, link: '/student/student-attendance' },
+    { name: 'Exit', icon: LogOut, link: '/student/student-exit' },
 ];
 
 const StudentSideNavbar = () => {
@@ -63,7 +63,7 @@ const StudentSideNavbar = () => {
                     {menuItems.map((item) => {
                         const Icon = item.icon;
 
-                        const isExactMatchRequired = item.link === '/instructor';
+                        const isExactMatchRequired = item.link === '/student';
 
                         return (
                             <li key={item.name}>
