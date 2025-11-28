@@ -7,7 +7,7 @@ export default function Login() {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [role, setRole] = useState("Instructor");
+    const [role, setRole] = useState("Admin");
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -59,8 +59,8 @@ export default function Login() {
                         className="w-full text-sm border p-2 rounded-lg border-gray-300 mb-3 my-2"
                         onChange={(e) => setRole(e.target.value)}
                     >
-                        <option>Instructor</option>
                         <option>Admin</option>
+                        <option>Instructor</option>
                         <option>Student</option>
                     </select>
 
@@ -68,6 +68,7 @@ export default function Login() {
                         Login
                     </button>
                     <p className="underline decoration-orange-400 text-orange-400 text-end">Forgot password?</p>
+                    <p className="mt-10">Login with Username: unitech  & password: 2025</p>
                 </form>
             </div>
 
