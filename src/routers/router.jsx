@@ -20,6 +20,7 @@ import InstructorExit from "../instructorPages/InstructorExit";
 import StudentProfile from "../studentPages/StudentProfile";
 import StudentAnnouncement from "../studentPages/StudentAnnouncement";
 import StudentExit from "../studentPages/StudentExit";
+import InstructorResult from "../instructorPages/InstructorResult";
 
 const router = createBrowserRouter([
     {
@@ -91,6 +92,10 @@ const router = createBrowserRouter([
             {
                 path: "instructor-exit",
                 element: <InstructorExit></InstructorExit>
+            },
+            {
+                path: "instructor-result",
+                element: <InstructorResult></InstructorResult>
             }
         ]
     },
