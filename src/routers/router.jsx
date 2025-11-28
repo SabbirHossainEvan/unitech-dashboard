@@ -21,6 +21,8 @@ import StudentProfile from "../studentPages/StudentProfile";
 import StudentAnnouncement from "../studentPages/StudentAnnouncement";
 import StudentExit from "../studentPages/StudentExit";
 import InstructorResult from "../instructorPages/InstructorResult";
+import StudentAttendance from "../studentPages/StudentAttendance";
+import StudentResult from "../studentPages/StudentResult";
 
 const router = createBrowserRouter([
     {
@@ -109,12 +111,21 @@ const router = createBrowserRouter([
             },
             {
                 path: 'student-attendance',
+                element: <StudentAttendance></StudentAttendance>
+            },
+            {
+                path: 'student-redult',
+                element: <StudentResult></StudentResult>
+            },
+            {
+                path: 'student-annoucement',
                 element: <StudentAnnouncement></StudentAnnouncement>
             },
             {
                 path: 'student-exit',
                 element: <StudentExit></StudentExit>
-            }
+            },
+            
         ]
     }
 ])

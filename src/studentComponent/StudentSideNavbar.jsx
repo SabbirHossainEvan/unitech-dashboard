@@ -19,9 +19,9 @@ import { NavLink } from 'react-router-dom';
 // Define the menu items
 const menuItems = [
     { name: 'Profile', icon: User, link: '/student' }, // Base route
-    { name: 'Attendance', icon: FilePenLine, link: '/attendance' },
-    { name: 'Result', icon: FileText, link: '/result' },
-    { name: 'Announcement', icon: Megaphone, link: '/student/student-attendance' },
+    { name: 'Attendance', icon: FilePenLine, link: '/student/student-attendance' },
+    { name: 'Result', icon: FileText, link: '/student/student-redult' },
+    { name: 'Announcement', icon: Megaphone, link: '/student/student-annoucement' },
     { name: 'Exit', icon: LogOut, link: '/student/student-exit' },
 ];
 
