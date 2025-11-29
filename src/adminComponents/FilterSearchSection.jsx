@@ -39,7 +39,7 @@ const FilterSearchSection = ({ onSearch, onReset }) => {
       </div>
 
       {/* User ID Input */}
-      <div className="mb-6">
+      <div className="mb-5">
         <label htmlFor="userId" className="block text-sm font-medium text-gray-700 mb-2">
           User ID
         </label>
