@@ -20,7 +20,7 @@ const FilterSearchSection = ({ onSearch, onReset }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-5 ">
+    <div className="bg-white rounded-lg shadow-lg p-6 ">
       <h3 className="text-xl font-bold text-gray-800 mb-6">Filter Search</h3>
 
       {/* Name Input */}
