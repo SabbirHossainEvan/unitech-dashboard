@@ -25,7 +25,7 @@ const FilterSearchSection = ({ onSearch, onReset }) => {
 
       {/* Name Input */}
       <div className="mb-4">
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-">
           Name
         </label>
         <input
