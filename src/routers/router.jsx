@@ -124,7 +124,7 @@ const router = createBrowserRouter([
             {
                 path: 'student-exit',
                 element: <StudentExit></StudentExit>
-            },
+            }
             
         ]
     }
